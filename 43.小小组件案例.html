@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <link rel="stylesheet" href="./lib/bootstrap-3.3.7.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+    <style>
+        .v-enter,.v-leave-to{
+            opacity: 0;
+            transform: translateY(80px);
+        }
+        .v-enter-active,.v-leave-avtive{
+            transition: all 1s;
+            transform: translate(0);
+        }
+        .v-move{
+            transition: all 2s;
+        }
+        .v-leave-active{
+            position: absolute;
+            transform: translateY(0px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="app">
+        <com @fun="show"></com>
+
+        <!-- <ul class="list-group"> -->
+        <transition-group class="list-group" tag="ul">
+            <li class="list-group-item" v-for="(item,i) in list" :key="item.user" @click="del(i)">
+                {{item.content}}
+                <span class="badge" style="background-color: salmon">作者:{{item.user}}</span>
+                <span class="badge"  style="background-color: orange">时间: {{item.id | dateString }}</span>
+            </li>
+        </transition-group>
+        <!-- </ul> -->
+    </div>
+    <template id="userInfo">
+        <div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">姓名:</label><br>
+                <input type="tetx" class="form-control" id="exampleInputEmail1" placeholder="user" v-model="user">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">内容:</label><br>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="content" v-model="content">
+            </div>
+            <div>
+                <button type="button" class="btn btn-info" style="margin-bottom: 10px" @click="sub">按钮</button>
+            </div>
+        </div>
+    </template>
+
+    <script>
+        //时间
+        Vue.filter("dateString",function(){
+            return moment().format("YYYY-MM-DD HH:mm:ss");
+        })
+        //子组件
+        let com = {
+            template: "#userInfo",
+            data() {
+                return {
+                    user: "",
+                    content: ""
+                }
+            },
+            methods: {
+                sub() {
+                    //获取数据
+                   let items = JSON.parse(localStorage.getItem("item") || "[]");
+                    // 定义一个对象保存获取的数据
+                    let obj = { id: new Date(), user: this.user, content: this.content };
+                    items.push(obj)
+                    //将对象转换为字符串,保存
+                    localStorage.setItem("item",JSON.stringify(items));
+
+                    this.$emit("fun",items);
+                },
+              
+            }
+        }
+
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                list: [
+                    {id:new Date(), user:"小小", content:"要吃大西瓜"}
+                ]
+            },
+            mounted(){
+                let item = JSON.parse(localStorage.getItem("item"));
+                this.show(item);
+            },
+            methods: {
+                show(item){
+                    this.list = item;
+                    console.log(this.list);
+                },
+                del(i){
+                    this.list.splice(i,1);
+                    let item = JSON.parse(localStorage.getItem("item"));
+
+                    item.splice(item.find(function(value,index){
+                        return index == i;
+                    }), 1);
+
+                    localStorage.setItem("item",JSON.stringify(item))
+                }
+            },
+            components: {
+                com
+            }
+        })
+    </script>
+</body>
+
+</html>

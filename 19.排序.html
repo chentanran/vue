@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="searchStr">
+        <p v-for="(value,index) in datas" :key="index">
+            {{value.item}} --- {{value.name}} --- {{index}}
+        </p>
+
+        <input type="button" value="从小到大" @click="small">
+        <input type="button" value="从大到小" @click="big">
+        <input type="button" value="原样排序" @click="normal">
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                searchStr: "",
+                orderType: 0,
+                list:[
+                    {item: "2", name: "小李"},
+                    {item: "5", name: "小网"},
+                    {item: "3", name: "小大"},
+                    {item: "4", name: "小小"}
+                ]
+            },
+            computed: {
+                //实现搜索功能
+                datas(){
+                    const {searchStr, list,orderType} = this;
+
+                    let islist = list.filter(l => l.name.indexOf(searchStr)!== -1);
+
+                    if(orderType !== 0){
+                        islist.sort(function(l1,l2){
+                            if(orderType == 1){
+                                return l1.item - l2.item;
+                            }else if(orderType == 2){
+                                return l2.item - l1.item;
+                            }
+                        })
+                    }
+                        
+                    return islist;
+                },
+            },  
+            methods:{
+                small(){
+                    this.orderType = 1;
+                },
+                 big(){
+                    this.orderType = 2;
+                },
+                 normal(){
+                    this.orderType = 0;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-once>这是一个 {{msg}}</div>
+        <input type="button" value="按钮" @click = "msg1">
+    </div>
+
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data:{
+                msg: "你好啊"
+            },
+            methods:{
+                msg1(){
+                    this.msg = "123";
+                }
+            }
+        })
+    </script>
+</body>
+</html>

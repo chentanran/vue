@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p v-xiao-text="msg"></p>
+        <p v-xiao-html="msg1"></p>
+    </div>
+
+    <script>
+        //全局指令
+        Vue.directive("xiao-text",function(el,binding){
+           
+            el.innerHTML = binding.value.toUpperCase()
+        })
+
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                msg: "updAtE",
+                msg1: "UPPPPJFDHFKSFHKaadhkf"
+            },
+            //局部指令
+           directives: {
+            "xiao-html"(el,binding){
+                console.log(el, binding);
+                el.innerHTML = binding.value.toLowerCase();
+            }
+           }
+        })
+    </script>
+</body>
+</html>

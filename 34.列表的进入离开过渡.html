@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <style>
+        li{
+            border: 1px dashed red; 
+        }
+       li:hover{
+           background-color: pink;
+       }
+
+       .v-enter,.v-leave-to{
+           opacity: 0;
+           transform: translateY(50px);
+       }
+       .v-enter-active, .v-leave-active{
+           transition: all 1s;
+       }
+       .v-move{
+           transition:all 1s;
+       }
+       .v-leave-active{
+           position: absolute;
+       }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="id">
+        <input type="text" v-model="name">
+        <input type="button" value="按钮" @click="add">
+        <!-- <ul> -->
+            <transition-group appear tag="ul">
+                <li v-for="(item,i) in list" v-bind:key="item" class="list-item" :key="item.id">
+                  {{item.id}} -- {{ item.name }} ----- <input type="button" value="删除" @click="del(item.id)">
+                </li>
+            </transition-group>
+        <!-- </ul> -->
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                id: "",
+                name: "",
+                list: [
+                    { id: 1, name: "娃哈哈" },
+                    { id: 2, name: "爽歪歪" },
+                    { id: 3, name: "营养快线" }
+                ]
+            },
+            methods: {
+                add(){
+                    let res = {id: this.id,name:this.name};
+                    this.list.push(res);
+                    this.id = this.name = "";
+                },
+                del(id){
+                    this.list.forEach((item,i) => {
+                        if(item.id == id){
+                            console.log(id)
+                            this.list.splice(i,1);
+                            return true;
+                        }
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

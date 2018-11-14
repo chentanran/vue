@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #app{
+        margin: 100px 100px;
+    }
+    p{
+        font-size: 20px;
+        color: tomato;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <message :fathermsg ='msg'></message>
+    </div>
+    <template id="tpl">
+        <p>
+            1.我在子组件中,看到没有?但是看不到父组件中的msg<br>
+            2.试试在子组件中绑定一个属性来访问父组件中的数据<br>
+            3.{{fathermsg}}
+        </p>
+    </template>
+
+
+    <script src="./lib/vue-2.4.0.js"></script>
+    <script>
+        Vue.component('message', {
+            template:"#tpl",
+            data() {
+                return {
+                    name: "xh",
+                    age: 24
+                }
+            },
+            props:['fathermsg']
+        })
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                msg: "hello,这是父组件的数据,你看到了没有?"
+            },
+            methods: {}
+        })
+    </script>
+</body>
+
+</html>

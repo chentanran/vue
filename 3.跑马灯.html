@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="button" value="跑起来" @click="run"/>
+    <input type="button" value="stop" @click="stop"/>
+    <p>{{text}}</p>
+</div>
+
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data:{
+            text: "给老夫跑起来",
+            pause: null
+        },
+        methods:{
+            run(){
+                // if(this.pause !== null) return;
+                clearInterval(this.pause)   //两种方式都可
+               this.pause =  setInterval(()=>{
+                    let start = this.text.substring(0,1);
+                    let end = this.text.substring(1);
+                    this.text = end + start;
+                },200) 
+            },
+            stop(){
+                clearInterval(this.pause)
+                // this.pause = null;
+            }
+        }
+    })
+</script>
+</body>
+</html>

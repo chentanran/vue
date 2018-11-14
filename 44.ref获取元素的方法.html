@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="按钮" @click="text">
+        <h3 ref="h3">这是一个大啊啊</h3>
+
+        <login ref="login"></login>   
+    </div>
+
+    <script>
+        let login = {
+            template: "<h1>好好学习</h1>",
+            data(){
+                return {
+                    msg: "login in"
+                }
+            },
+            methods:{
+                show(){
+                    console.log(this.msg)
+                }
+            }
+        }
+
+        const vm = new Vue({
+            el: "#app",
+            data:{},
+            methods:{
+                text(){
+                   console.log(this.$refs.h3.innerText) 
+                  this.$refs.login.show()
+                }
+            },
+            components:{
+                login
+            }
+        })    
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="lib/vue-2.4.0.js"></script>
+    <link rel="stylesheet" href="./lib/animate.css">
+</head>
+<body>
+    <div id="app">
+        <input type="button"  @click="show = !show">
+        <transition enter-active-class="animated  bounceOutRight" leave-active-class="animated bounceInUp">
+            <h1 v-show="show">你好</h1>
+        </transition>
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                show: false
+            }
+        })    
+    </script>
+</body>
+</html>

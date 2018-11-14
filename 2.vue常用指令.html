@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <style>
+        [v-cloak]{
+            dispaly: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <p >{{msg}}</p>
+    <p v-Text="node"></p>
+    <p v-html="html"></p>
+    <input type="text" :value="node + '天天向上'"/>
+    <input type="text" @click="aaa" value="你好啊"/>
+</div>
+
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "node",
+            node: "这是一个node指令",
+            html: "<h1>这是一个html</h1>"
+        },
+        methods:{
+            aaa:function(){
+                alert("haohaohao")
+            }
+        }
+    })
+</script>
+</body>
+</html>

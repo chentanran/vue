@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <mycom></mycom>
+    </div>
+
+    <script>
+        // 1.使用Vue.extentd 来创建全局的Vue组件,通过template属性,指定了组件要展示的HTML结构
+        // const com = Vue.extend({
+            // template: '<p>这是一个模板</p>' 
+        // })
+        
+        // 2.使用Vue.component("组件的名称",创建出来的组件模板对象)
+        // 如果使用Vue.component定义全局组件的时候,组件使用了驼峰命名,在引用组件的时候,需要把大写的驼峰该为小写的字母
+        // Vue.component("mycom",com)
+
+        Vue.component("mycom",Vue.extend({
+            template: "<h1>这是一个简写的模板</h1>"
+        }))
+
+        const vm = new Vue({
+            el: "#app",
+            data:{
+
+            }
+        })
+    </script>
+</body>
+</html>

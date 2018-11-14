@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <test>
+          
+        </test>
+    </div>
+
+    <script>
+        Vue.component("test",{
+            template: "<h3>小兔子乖乖,把门开开-- {{msg}}</h3>",
+            data(){
+                return {
+                    msg : "大灰狼来啦"
+                }
+            }
+        })
+
+        const vm = new Vue({
+            el: "#app",
+            data: {},
+            methods: {}
+        })
+    </script>
+</body>
+</html>

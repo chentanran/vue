@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        姓名:<input type="text" v-model="add">
+        密码:<input type="text" v-model="msg">
+        <p v-text="addmsg"></p>
+        <input type="text" v-model="addmsg">
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data:{
+                add: "",
+                msg: ""
+            },
+            computed: {
+                addmsg(){
+                    return this.add + " " + this.msg;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "这是用来存储一些小功能的仓库",
+  "main": "123.js",
+  "dependencies": {
+    "art-template": "^4.13.1",
+    "body-parser": "^1.18.3",
+    "calc": "^1.0.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-art-template": "^1.0.1",
+    "jquery": "^3.3.1",
+    "mysql": "^2.16.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chentanran/demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chentanran/demo/issues"
+  },
+  "homepage": "https://github.com/chentanran/demo#readme"
+}

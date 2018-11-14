@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <form action="" @submit.prevent="submit">
+            <label for="username">姓名:</label>
+            <input type="text" id="username" name="username" value="" v-model="username"><br>
+
+            <label for="password">密码</label>
+            <input type="password" id="password" value="" v-model="password"><br>
+
+            <label for="gender" id="label" >性别:</label>
+            男:<input type="radio" value="male" v-model="gender"> 
+            女: <input type="radio" value="female" v-model="gender"><br>
+
+            <label for="like">爱好:</label>
+            篮球:<input type="checkbox" v-model="like" value="basketball">
+            足球:<input type="checkbox" v-model="like" value="football">
+            羽毛球:<input type="checkbox" v-model="like" value="badminton"><br>
+
+            <label for="">城市</label>
+            <select name="" id="" v-model="citys">
+                <option :value="value.id" v-for="(value,index) in city" :key="value.id">{{value.name}}</option>
+            </select><br>
+            <label for="">文本</label>
+            <textarea name="" id="" cols="30" rows="10" v-model="text"></textarea><br>
+
+
+            <input type="submit" >
+        </form>
+    </div>
+    
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data:{
+                username: "",
+                password: "",
+                gender: "male",
+                like: ["basketball"],
+                city:[
+                    {id:1, name:"北京"},
+                    {id:2, name:"上海"},
+                    {id:3, name:"深圳"},
+                    {id:4, name:"武汉"},   
+                ],
+                citys: "3",
+                text: ""
+            },
+            methods:{
+                submit(){
+                    alert(this.username + "--" +  this.password +"--" + this.gender +"--"+ this.like + "--" + this.citys + "--" + this.text);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

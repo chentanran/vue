@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+        <com1 @fun="show"></com1> 
+    </div>
+
+    <template id="temp">
+        <div>
+            <h3>{{title}}</h3>
+            <p>{{name}}</p>
+            <input type="button" value="按钮" @click="click">
+        </div>
+    </template> 
+
+    <script>
+        let com1 = {
+            template: "#temp",
+            data(){
+                return {
+                    title: "标题",
+                    name: "姓名"
+                }
+            },
+            methods:{
+                click(){
+                    this.$emit("fun",this.title,this.name)
+                }
+            }
+        }
+
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                msg: "这是一个父元素"
+            },
+            methods:{
+                show(data){
+                   this.msg = data;
+                }
+            },
+            components:{
+                com1
+            }
+        })
+    </script>
+</body>
+</html>

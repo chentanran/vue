@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p v-for="(value, index) in list" :key="index">
+           {{value.name}} ---{{value.item}} --- {{index}}
+            -- <input type="button" value="删除" @click="del(index)"/>  
+            -- <input type="button" value="更新" @click="upd(index,{item:'0',name:'小狗'})"> 
+        </p>
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data:{
+                list:[
+                    {item: 1, name: "小李"},
+                    {item: 2, name: "小网"},
+                    {item: 3, name: "小大"},
+                    {item: 4, name: "小小"}
+                ]
+            },
+            methods: {
+                del(index){
+                    this.list.splice(index,1);
+                },
+                upd(index,update){
+                    this.list.splice(index,1,update);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

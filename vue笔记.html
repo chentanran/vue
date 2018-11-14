@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <!-- <script> -->
+        <pre>
+        MVVM
+            M: modul
+            V: View
+            VM: view Model
+
+        插值表达式: {{}}
+        
+        v-开头的都被称为vue内置指令
+
+        1.渲染文本
+            v-Text
+        2.渲染html
+            v-html
+        3.解决差值表达式闪烁问题
+            将标签 v-cloak 属性, 给该标签添加样式为display:none, 当差值表达式有数据的时候会将标签自动显示
+
+        v-text 和 v-heml 会将标签内容完全覆盖,差值表达式可以在前台拼接内容
+
+        4.绑定属性:
+            v-bind
+                可以简写为 :要绑定的属性
+                可以写合法的表达式  
+                可以针对标签自带的属性,也可以针对自定义的属性
+                <input type="text" v-bind:title="变量 + '字符串'"> <input type="text" :title="变量 + '字符串'">
+        
+        注意: 以上的所有指令用到的msg都需要放到vue实例的data属性中
+                let vm = new Vue({
+                    el: "id"  // el对应的是vm的控制试图区域,传入选择器即可
+                    data:{  //data对应的是Model层,就是数据对象,页面的所有的数据都会存放在该对象中
+                        msg: 属性
+                    },
+                    methods: { //
+                        show(){}
+                    }
+                })
+        5.绑定事件:
+            v-on 简写  @
+                <button value="按钮" v-on:click="show"></button>
+                <button value="按钮" @click="show"></button>
+
+            事件修饰符:  需要加载绑定事件的后面
+                1.stop  阻止冒泡
+                2.prevent 阻止默认行为
+                3.self 只有点击自己才会触发事件,其他情况不会触发
+                4.once 只触发一次
+                5.capture  事件捕获
+                多个时间修饰符可以同时添加一个事件
+
+        在methods中 所有的函数内部this都会指向vm实例
+            在methods中访问data中的数据,应该this.xxx
+
+        双向数据绑定
+                v-model
+                只能用在表单身上,不需要想v-bind指定要绑定的属性,v-model只能绑定在表单的value上
+                使用变量双向绑定,必须定义并赋值
+
+        绑定class完成样式修改
+                1.以前的方式,不通过v-bind
+                2.个别内样式需要根据标识符来切换,如active 推荐使用v-bind来绑定
+                    <div :class="['red', 'thin', {active:flag}]"></div>
+                3.多个类样式需要标识符来切换,推荐使用v-bnd对象的方式绑定
+                    <div :classs="{red:true,thin:true}"></div>
+        
+        绑定style属性
+                1.绑定对象
+                    <div :style="{color: 'red'}"></div>
+                2.绑定数组,数组中存放多个样式对象
+                    <div :style="[obj1,obj2]"></div>
+        
+        v-for指令
+                1.循环数组
+                    <p v-for="(value,key) in arr">{{value}}</p>
+                    如果有对象
+                    <p v-for="(value,key) in arr">{{value.name}}</p>
+                2.循环对象
+                    <p v-for="(value,key) in obj"></p>
+                3.迭代数字(从1开始)
+                    <p v-for="count in 100">{{count }}</p>
+
+            使用v-for渲染列表時,如果涉及数据的顺序变化,那么跟随数据的一些状态,默认不会跟随数据的顺序改变而改变,也是vue默认的策略: 就地复用:,好处的减小DOM操作,问题:一但数据的顺序发生改变,状态不会随数据改变而改变
+            key的出现就是为了告诉vue ,数据与DOM直接相关联的,当数据的顺序发生变化时,vue会帮我们重排
+                可以为每项提供一个唯一的key属性
+
+        过滤器:
+                只是为了做渲染输出前的最后一道处理,一般用字符串的操作,不要在过滤器的处理函数中做大量的业务逻辑操作
+            使用方法:
+                1.定义全局过滤器
+                    Vue.filter('过滤器的名称',过滤器的处理函数function(管道符左侧的数据,)){
+                        处理函数的返回值是最终处理好的数据
+                        return msg + 'xxx';
+                    }
+                2.使用过滤器
+                    <p>{{msg | 过滤器名称}}</p>
+                3.过滤器传参数
+                    <p>{{msg | 过滤器名称(参数1,参数2)}}</p>
+                4.过滤器可以多次过滤
+                    <p>{{msg | 过滤器 | 过滤器}}</p>
+        私有过滤器:
+                和全局作用域唯一的区别是定义方式不同,私有过滤器需要在vm实例的配置对象中添加filters属性,该属性也是一个对象
+                var vm = new Vue{
+                    filters: {
+                        过滤器名称(msg){
+                            第一个参数是管道左边的数据  
+                        }
+                    }
+                }
+            
+        按键修饰符
+                自定义按键修饰符:
+                    Vue.config.keyCodes.键盘符 = 键盘码值
+                按键修饰符的使用:
+                    <input type="text" @keyup.enter="函数名"> 
+                    只有在按enter键时,才会触发该事件
+        
+        自定义指令
+            当页面加载就让某个元素获取焦点
+            1.定义全局自定义属性
+                Vue.directive(指令名, 对象:对象里有回调函数{
+                    绑定到标签元素时执行,元素还没渲染到页面上
+                    bind:function(el){},
+                    当元素渲染到页面时调用
+                    inserted: function(){}
+                })
+            2.定义私有的自定义属性
+                将指令定义在vm的directives上即可
+         </pre>
+    <!-- </script> -->
+
+    vue对象的生命周期
+         1.初始化显示
+            beforeCreate()
+            created()
+            beforeMount()
+            mounted()
+        2.更新显示
+            beforeUpdate()
+            updated()
+         3.销毁vue实例: vm.$destory()
+            beforeUpdate()
+            updated()
+            destoryed()
+    常用生命周期方法
+         created() / mounted() 发送ajax请求,启动定时器等异步任务
+         beforeDestroy() 做收尾工作, 如:清理定时器
+
+    通过vue-resource设置默认根域名
+         Vue.http.option.root = "http://xxx.xxx.xx"
+         如果使用根域名配置,在发送请求时必须是相对路径,不能以'/开头'
+</body>
+</html>

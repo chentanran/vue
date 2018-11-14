@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+            <input type="button" value="停" @click="stops">
+        <p v-show="isdata">你好啊</p>
+        
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                isdata: true
+            },
+            mounted(){
+                this.interval = setInterval(()=>{
+                    this.isdata = !this.isdata
+                    console.log(1233)
+                },1000)
+            },
+            beforeDestroy(){
+                clearInterval(this.interval)
+            },
+            methods: {
+                stops(){
+                    this.$destroy()
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>

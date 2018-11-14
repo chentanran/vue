@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+       <input type="text" value="" v-model="msg1">
+       <input type="text" value="" v-model="msg2">
+
+       <p>{{msg3}}</p>
+       <p>{{msg4}}</p>
+       <input type="text" v-model="msg5">
+    </div>
+
+    <script>
+     const vm = new Vue({
+            el: "#app",
+            data:{
+                msg1: "",
+                msg2: "",
+                msg4: ""
+            },
+            computed: {
+                msg3(){
+                    return this.msg1 + " " + this.msg2;
+                },
+                msg5:{
+                    get(){
+                        return this.msg1 + " " + this.msg2;
+                    },
+                    set(value){
+                        const item = value.split(" ");
+                        this.msg1 = item[0];
+                        this.msg2 = item[1];
+                    }
+                }
+            },
+            watch:{
+               msg1:function(value){
+                   this.msg4 = value + " " + this.msg2
+               }
+            }
+        })
+        
+        vm.$watch("msg2",function(value){
+            this.msg4 = value + " " + this.msg1;
+        })
+    </script>
+</body>
+</html>

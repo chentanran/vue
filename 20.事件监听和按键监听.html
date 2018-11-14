@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <style>
+        .div{
+            height:100px;
+            width:100px;
+            background:red;
+        }
+        .div1{
+            height:50px;
+            width:50px;
+            background:blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div @click="div1($event)">这是第一个div</div>
+        <div @click="div2" :class="div4">
+            <div @click.stop="div5" :class="div3"></div>
+        </div>
+        <a href="http://www.baidu.com" @click.prevent="art">百度一下</a>
+
+        <input type="text" @keyup.enter="inp($event)"> 
+    </div>
+
+    <script>
+    const vm = new Vue({
+        el: "#app",
+        data:{
+            div3: {div1:true},
+            div4: {div:true}
+        },
+        methods:{
+            div1(event){
+               alert(event.target.innerHTML)
+            },
+            div2(){
+                alert("123");
+            },
+            div5(){
+                alert("345");
+            },
+            art(){
+                alert(567)
+            },
+            inp(event){
+                // if(event.keyCode === 13){
+                    alert(event.target.value);
+                // }
+            }
+        }
+    })
+    </script>
+</body>
+</html>
