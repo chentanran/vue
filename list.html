@@ -21,7 +21,7 @@
             transform: translate(0);
         }
         .v-move{
-            transition: all 2s;
+            transition: all 1s;
         }
         .v-leave-active{
             position: absolute;
@@ -32,7 +32,7 @@
 
 <body>
     <div class="container" id="app">
-        <com @fun="show"></com>
+        <com @fun="allData"></com>
 
         <!-- <ul class="list-group"> -->
         <transition-group class="list-group" tag="ul">
@@ -92,7 +92,9 @@
                     this.$http.post("http://127.0.0.1:3000/add", {user:this.user,content:this.content},{ emulateJSON: true }).then(function(res){
                         // console.log(res);
                         if(res.body.status == 200){
-                            location.reload();
+                            // location.reload();
+                            // this.allData()
+                            this.$emit("fun");
                         }
                     })
                 },
@@ -108,25 +110,29 @@
                 ]
             },
             mounted(){
-                this.$http.get("http://127.0.0.1:3000").then(function(res){
-                        console.log(res)
+                this.allData();
+                // console.log(1);
+                // let item = JSON.parse(localStorage.getItem("item"));
+                // this.show(item);
+            },
+            methods: {
+                allData(){
+                    this.$http.get("http://127.0.0.1:3000").then(function(res){
+                        // console.log(res)
                         if(res.body.status == 200){
                             let item = res.body.data;
                             this.show(item)
                         }
                        
                     })
-                // let item = JSON.parse(localStorage.getItem("item"));
-                // this.show(item);
-            },
-            methods: {
-                
+                },
                 show(item){
                     this.list = item;
+                    // this.allData()
                     // console.log(this.list);
                 },
                 del(i){
-                    console.log(i)
+                    // console.log(i)
                     // this.list.splice(i,1);
                     // let item = JSON.parse(localStorage.getItem("item"));
 
@@ -138,7 +144,8 @@
 
                     this.$http.get("http://127.0.0.1:3000/del/"+i).then(function(res){
                         if(res.body.status == 200){
-                            location.reload();
+                            // location.reload();
+                            this.allData()
                         }
                     })
                 }

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+    <div id="app">
+        <son :gift="msg" @fun="show"></son>
+        <p>今天是个好日子 {{items}}</p>
+    </div>
+
+    <script>
+        const son = {
+            template: "<p @click='res'>今天是个好日子, {{gift}}</p>",
+            props:['gift'],
+            data(){
+                return {
+                    msg: "老头,给你送礼物来啦"
+                }
+            },
+            methods:{
+                res(){
+                    this.$emit("fun",this.msg)
+                }
+            }
+        }
+
+        const vm = new Vue({
+            el: "#app",
+            data:{
+                msg: "my son , 我给你送东西来啦",
+                items: ""
+            },
+            components:{
+                son
+            },
+            methods:{
+                show(item){
+                    this.items = item;
+                    
+                }
+            }
+        })
+    </script>
+</body>
+</html>

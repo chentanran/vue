@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: tomato;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <a href="#/login">登录</a> -->
+        <!-- <a href="#/register">注册</a>  -->
+        <!-- 为了避免每次都在a标签里写# ,router-link默认渲染为a标签-->
+        <router-link to="/login">登录</router-link>
+        <router-link to="/register">注册</router-link>
+        <router-view></router-view>
+    </div>
+
+    <script src="./lib/vue-2.4.0.js"></script>
+    <script src="./lib/vue-router-3.0.1.js"></script>
+    <script>
+        var login = {
+            template: "<div>登录组件</div>"
+        }
+        var register = {
+            template: "<div>注册组件</div>"
+        }
+
+        var router = new VueRouter({
+            routes: [
+                { path: "/login", component: login },
+                { path: "/register", component: register }
+            ]
+        })
+
+        var vm = new Vue({
+            el: "#app",
+            data: {},
+            methods: {},
+            components: {
+                login,
+                register
+            },
+            router
+        })
+
+    </script>
+</body>
+
+</html>
