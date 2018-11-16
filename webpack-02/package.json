@@ -14,9 +14,17 @@
     "jquery": "^3.3.1",
     "mysql": "^2.16.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "css-loader": "^1.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --hot --contentBase src --open"
   },
   "repository": {
     "type": "git",

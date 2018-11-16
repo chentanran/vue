@@ -17,7 +17,7 @@
 
     <script>
         let login = {
-            template: "<h1>好好学习</h1>",
+            template: "<h1 ref='study'>好好学习</h1>",
             data(){
                 return {
                     msg: "login in"
@@ -35,8 +35,9 @@
             data:{},
             methods:{
                 text(){
-                   console.log(this.$refs.h3.innerText) 
-                  this.$refs.login.show()
+                //    console.log(this.$refs.h3.innerText) 
+                   console.log(this.$refs.login)
+                //   this.$refs.login.show()
                 }
             },
             components:{

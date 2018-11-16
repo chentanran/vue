@@ -158,5 +158,63 @@
     通过vue-resource设置默认根域名
          Vue.http.option.root = "http://xxx.xxx.xx"
          如果使用根域名配置,在发送请求时必须是相对路径,不能以'/开头'
+
+    webpack
+        安装:
+            npm i webpack -g
+            npm i webpack-cli -g
+        基本使用:
+            1.通过webpack指令打包
+                引入包
+                建立项目结构
+                将代码写在main.js中
+            浏览器不支持import语法,需要使用webpack进行打包输出bundle.js
+            直接打包会输出警告信息
+            默认会以production模式进行打包,也会压缩合并混淆,不需压缩合并混淆可以用development模式打包
+
+            通过-d参数可以指定打包模式为development 表示不压缩, -p表示production模式并压缩
+       
+            2.通过webpack.config.js书写配置文件后.直接输入打包
+                    详情: webpack官网
+                配置好后直接输入webpack指令即可打包编译
+
+        webpack-dev-server 的 使用
+            1.依赖webpack, 除全部安装webpack外,局部也要安装webpack
+            2.由于不是全局安装,无法直接在命令行运行该指令,包安装在项目本地,需要借助npm工具执行脚本,在package.json中配置执行脚本
+                scripts : {
+                    "dev" : "webpack-dev-serer"
+                }
+                运行: npm run dev
+            3.设置webpack-dev-server的端口号
+                在命令行后面加上参数 --post 3000
+            4.设置根路径
+                --contentBase  ./path
+            5.自动打开浏览器
+                --open
+            6.设置热模块替换
+                --hot
+
+            默认情况下: webpack-dev-server 会将入口文件打包输出到项目的根目录,  
+
+            bundle.js 已经托管到内存中了.如需将html也托管到内存中
+
+                const HTMLWebpackPlugin = require("html-webpack-plugin")
+                plugins: [
+                    注册信息/: 查npm
+                ]
+                使用该插件后,内存中的index.html会自动添加bundle的引用,无需手动引用
+
+        import 可以导入 js 和 css文件
+
+        webpack的loader
+                webpack无法打包除了js文件外的所有文件,所有不同文件内型都需要安装对应的loader才可以加载,否则会报错
+                1.css加载
+                   npm i css-loader style-loader -D
+                在main中引入外部的css文件, 以后引入css文件不要在html中引入,为了避免二次http请求
+                    import './css/index.css'
+                安装完后还应进行相应的配置
+
+                2.less加载
+                    npm i less less-loader
 </body>
 </html>
