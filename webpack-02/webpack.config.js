@@ -16,7 +16,10 @@ module.exports = {
     ],
     module:{
         rules:[
-            {test: /\.css$/, use:["style-loader", "css-loader"]}
+            {test: /\.css$/, use:["style-loader", "css-loader"]},
+            {test: /\.(png|jpg|jpeg|gif)/, use: ["url-loader?limit=7000&name=[hash:8].[name].[ext]"]},
+            {test: /\.(eot|svg|ttf|woff|woff2)/, use: ['url-loader']}
+            
         ]
     }
 }

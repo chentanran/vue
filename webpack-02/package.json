@@ -6,6 +6,7 @@
   "dependencies": {
     "art-template": "^4.13.1",
     "body-parser": "^1.18.3",
+    "bootstrap": "^3.3.7",
     "calc": "^1.0.0",
     "cors": "^2.8.5",
     "ejs": "^2.6.1",
@@ -16,8 +17,10 @@
   },
   "devDependencies": {
     "css-loader": "^1.0.1",
+    "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
     "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
     "webpack": "^4.25.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"

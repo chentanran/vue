@@ -2,3 +2,11 @@
 p{
     height: 50px;
 }
+
+.img{
+    height: 200px;
+    width: 200px;
+    /* background-color: pink; */
+    background-image: url(../image/40.jpg);
+    background-size: cover;
+}
