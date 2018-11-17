@@ -1,0 +1,47 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "这是用来存储一些小功能的仓库",
+  "main": "123.js",
+  "dependencies": {
+    "vue-router": "^2.0.0",
+    "art-template": "^4.13.1",
+    "body-parser": "^1.18.3",
+    "bootstrap": "^3.3.7",
+    "cors": "^2.8.5",
+    "jquery": "^3.3.1",
+    "vue": "^2.5.17"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^1.0.1",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
+    "vue-loader": "^15.4.2",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --hot --contentBase src --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chentanran/demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chentanran/demo/issues"
+  },
+  "homepage": "https://github.com/chentanran/demo#readme"
+}

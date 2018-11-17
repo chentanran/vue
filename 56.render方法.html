@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="lib/vue-2.4.0.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>你好啊</p>
+        <!-- <login></login>    -->
+    </div>
+
+    <script>
+        const login = {
+            template: "<p>这是一个模板</p>"
+        }
+
+        const vm = new Vue({
+            el: "#app",
+            data:{},
+            components:{
+                login
+            },
+            render: function(createElements){  //createElements是一个方法,调用它能将指定的模板渲染到页面
+                // console.log(createElements)  
+                return createElements(login) //return 会替换页面中el指定的那个容器
+            }
+        })    
+    </script>
+</body>
+</html>
