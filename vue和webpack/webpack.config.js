@@ -22,6 +22,7 @@ module.exports = {
             {test: /\.less/, use: ['style-loader', 'css-loader', 'less-loader']},
             {test: /\.(png|jpg|jpeg|gif)/, use: ["url-loader?limit=7000&name=[hash:8].[name].[ext]"]},
             {test: /\.(eot|svg|ttf|woff|woff2)/, use: ['url-loader']},
+            { test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ }, // 配置 Babel 来转换高级的ES语法
             {test: /\.vue$/, use: ['vue-loader']}
         ]
     },
