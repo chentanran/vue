@@ -216,5 +216,77 @@
 
                 2.less加载
                     npm i less less-loader
+
+                3.url-loader
+                    css使用外部图片或字体时会引入外部资源,而webpack进行打包时不支持外部资源打包,需要借助url-loader
+                    npm i url-loader
+
+        render方法:
+                需要将某个组件放置到App区域,可以注册组件后直接在html中使用组件
+                    components:{
+                        组件名
+                    }
+                使用render函数使用组件:
+                    render: function(createElement) { return createElement(组件名) }
+                    特点是: 创建vm时,将指定的组件渲染成html代码,直接将app区域内的容器替换成该组件app内部会全部清空
+            
+        vue-loader:
+            npm i vue-loader vue-template-compiler -D 安装
+            配置
+            {test: /\.vue$/, use: "vue-loader"}
+            配置插件:
+                   const vueplu = require("vue-loader/lib/plugin")
+                    plugin: {
+                        new vueplu()
+                    }
+
+        export default 和 export
+            注意:
+                    1.export default 
+                        模块只能导出一个,不需要再模板中起名字
+                        导入时来定义使用的变量名即可
+                        export default {
+                            x: 1,
+                            y: 2
+                        }
+                        import z from "导入文件路径"
+                    2.export 可以单独导出模块的某个成员
+                        可以导出多个成员
+                        导出时定义好变量
+                        导入时必须按导出的名称来接收,可以通过as来起别名
+                        export var a = 1;
+                        import { a } from "导出文件路径"
+
+        在webpack中使用vue-router
+            1.装包
+                npm i vue-router
+            2.导入vue 和 vue-router 并且注册路由组件
+            3.注册路由组件
+                Vue.use(VueRouter)
+            4.创建路由对象
+              const  router = new VueRouter({
+                    routes: [
+                        {path: "路由地址", component: 组件名}
+                    ]
+                })
+            5.创建vm 实例
+                const vm = new Vue({
+                    el:"#app",
+                    render: c => c(组件名) //渲染组件
+                    router //挂载路有对象到vm对象上
+                })
+            6.在App.vue配置好组件标签,访问路由时,可以任意切换地址
+
+    .vue文件组件内部的style标签属性
+        lang: 指定style的语言,可选less 或 scss
+        scoped: 单属性,不需要设置属性值,让style样式只在当前组件内生效   
+
+    vue-cli
+        1.装包
+            全局安装脚手架 npm install vue-cli -g
+        2.使用脚手架创建模板
+                vue init webpack 项目名称
+                vue init webpack-simple 项目名称
+        3.如果使用第一种模板,会自动运行 npm instrall
 </body>
 </html>

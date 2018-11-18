@@ -1,17 +1,23 @@
 <template>
     <div class="header">
-       <span class="left">
+       <!-- <span class="left">
            <i class="iconfont icon-sousuo"></i>
-       </span>
-        <span class="content">我是内容,我是一直快乐的小兔子</span>
-        <span class="right">
+       </span> -->
+       <slot name="left"></slot>
+        <span class="content">{{title}}</span>
+        <slot name="right"></slot>
+        <!-- <span class="right">
             <a href="javascript:;">登录</a>|<a href="javascript:;">注册</a>
-        </span>
+        </span> -->
     </div>
 </template>
 
 <script>
-    
+    export default {
+        props: {
+            title: String
+        }
+    }
 </script>
 
 <style lang="less" scoped>
