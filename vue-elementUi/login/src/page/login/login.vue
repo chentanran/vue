@@ -40,6 +40,7 @@ import  { checkUser } from "@/app/axios.js"
                       checkUser(this.form).then(res=>{
                           if(res.meta.status == 200){
                               this.$message({message:'登录成功',type : "success"});
+                              localStorage.setItem("token", res.data.token)
                               this.$router.push("/home")
                           }else{
                               this.$message({ message: res.meta.msg, type : "error"});
