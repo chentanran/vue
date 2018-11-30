@@ -1,21 +1,21 @@
 <template>
     <div class="login-contain">
-      <el-form ref="form" :model="form" label-width="80px">
-        <el-form-item label="用户名:" prop="username">
+      <el-form ref="form" :model="form" label-width="80px" :rules="rules">
+        <el-form-item  prop="username">
             <el-input v-model="form.username" placeholder="账户"></el-input>
         </el-form-item>
-        <el-form-item label="密码:" prop="password">
-            <el-input v-model="form.password" type="password" placeholder="密码"></el-input>
+        <el-form-item  prop="password">
+            <el-input v-model="form.password" type="password" placeholder="密码" v-on:keyup.13="submitForm('form')"></el-input>
         </el-form-item>
         <el-form-item class="btn">
-            <el-button type="primary" @click="onSubmit" size="" round class="btn1">立即创建</el-button>
+            <el-button type="primary" @click="submitForm('form')"  round class="btn1">立即创建</el-button>
         </el-form-item>
       </el-form>
     </div>
 </template>
 
 <script>
-import "@/app/axios.js"
+import  { checkUser } from "@/app/axios.js"
     export default {
         data() {
           return {
@@ -34,8 +34,21 @@ import "@/app/axios.js"
           }
         },
         methods: {
-          onSubmit() {
-            console.log('submit!');
+          submitForm(formName) {
+              this.$refs[formName].validate((valid) => {
+                  if(valid){
+                      checkUser(this.form).then(res=>{
+                          if(res.meta.status == 200){
+                              this.$message({message:'登录成功',type : "success"});
+                              this.$router.push("/home")
+                          }else{
+                              this.$message({ message: res.meta.msg, type : "error"});
+                          }
+                      })
+                  }else{
+                      console.log("")
+                  }
+              })
           }
         }
     }

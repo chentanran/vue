@@ -1,10 +1,10 @@
 
-import Vue from 'vue'
-import ElementUI from 'element-ui';
+import Vue from 'vue' 
+import ElementUI from 'element-ui'; //引入ui组件
 import 'element-ui/lib/theme-chalk/index.css';
-import App from './App'
-import router from './router'
-// import "@/styles/index.scss"
+import App from './App' //引入App组件
+import router from './router' //导入路由
+import "@/styles/reset.scss"  //初始化样式
 
 Vue.use(ElementUI)
 //
