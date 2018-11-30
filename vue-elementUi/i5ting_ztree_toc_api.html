@@ -1,0 +1,3015 @@
+
+<!-- saved from url=(0024)http://47.96.21.88:8082/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	  
+    <title>i5ting_ztree_toc:api</title>
+		<link href="./i5ting_ztree_toc_api_files/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css">
+		<link href="./i5ting_ztree_toc_api_files/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css">
+		<link href="./i5ting_ztree_toc_api_files/zTreeStyle.css" media="all" rel="stylesheet" type="text/css">
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style="width:25%;">
+						<ul id="tree" class="ztree" style="width: 326px; overflow: auto; position: fixed; z-index: 2147483647; border: 0px none; left: 0px; top: 0px; height: 569px;"><li id="tree_1" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="tree_1_switch" title="" class="button level0 switch roots_docu" treenode_switch=""></span><a id="tree_1_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="Table of Content"><span id="tree_1_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_1_span">Table of Content</span></a></li><li id="tree_2" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="tree_2_switch" title="" class="button level0 switch bottom_open" treenode_switch=""></span><a id="tree_2_a" class="level0 curSelectedNode" treenode_a="" onclick="" href="http://47.96.21.88:8082/#1" target="_self" style="" title="1. api"><span id="tree_2_ico" title="" treenode_ico="" class="button ico_open" style="width:0px;height:0px;"></span><span id="tree_2_span">1. api</span></a><ul id="tree_2_ul" class="level0 " style="display:block"><li id="tree_3" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="tree_3_switch" title="" class="button level1 switch center_open" treenode_switch=""></span><a id="tree_3_a" class="level1" treenode_a="" onclick="" href="http://47.96.21.88:8082/#101" target="_self" style="" title="1.1. 登录"><span id="tree_3_ico" title="" treenode_ico="" class="button ico_open" style="width:0px;height:0px;"></span><span id="tree_3_span">1.1. 登录</span></a><ul id="tree_3_ul" class="level1 line" style="display:block"><li id="tree_4" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_4_switch" title="" class="button level2 switch bottom_docu" treenode_switch=""></span><a id="tree_4_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10101" target="_self" style="" title="1.1.1. 登录验证接口"><span id="tree_4_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_4_span">1.1.1. 登录验证接口</span></a></li></ul></li><li id="tree_5" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="tree_5_switch" title="" class="button level1 switch center_open" treenode_switch=""></span><a id="tree_5_a" class="level1" treenode_a="" onclick="" href="http://47.96.21.88:8082/#102" target="_self" style="" title="1.2. 用户管理"><span id="tree_5_ico" title="" treenode_ico="" class="button ico_open" style="width:0px;height:0px;"></span><span id="tree_5_span">1.2. 用户管理</span></a><ul id="tree_5_ul" class="level1 line" style="display:block"><li id="tree_6" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_6_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_6_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10201" target="_self" style="" title="1.2.1. 用户数据列表"><span id="tree_6_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_6_span">1.2.1. 用户数据列表</span></a></li><li id="tree_7" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_7_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_7_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10202" target="_self" style="" title="1.2.2. 添加用户"><span id="tree_7_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_7_span">1.2.2. 添加用户</span></a></li><li id="tree_8" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_8_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_8_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10203" target="_self" style="" title="1.2.3. 修改用户状态"><span id="tree_8_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_8_span">1.2.3. 修改用户状态</span></a></li><li id="tree_9" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_9_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_9_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10204" target="_self" style="" title="1.2.4. 根据ID查询用户信息"><span id="tree_9_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_9_span">1.2.4. 根据ID查询用户信息</span></a></li><li id="tree_10" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_10_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_10_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10205" target="_self" style="" title="1.2.5. 编辑用户提交"><span id="tree_10_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_10_span">1.2.5. 编辑用户提交</span></a></li><li id="tree_11" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_11_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_11_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10206" target="_self" style="" title="1.2.6. 删除单个用户"><span id="tree_11_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_11_span">1.2.6. 删除单个用户</span></a></li><li id="tree_12" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_12_switch" title="" class="button level2 switch bottom_docu" treenode_switch=""></span><a id="tree_12_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10207" target="_self" style="" title="1.2.7. 分配用户角色"><span id="tree_12_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_12_span">1.2.7. 分配用户角色</span></a></li></ul></li><li id="tree_13" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="tree_13_switch" title="" class="button level1 switch center_open" treenode_switch=""></span><a id="tree_13_a" class="level1" treenode_a="" onclick="" href="http://47.96.21.88:8082/#103" target="_self" style="" title="1.3. 权限管理"><span id="tree_13_ico" title="" treenode_ico="" class="button ico_open" style="width:0px;height:0px;"></span><span id="tree_13_span">1.3. 权限管理</span></a><ul id="tree_13_ul" class="level1 line" style="display:block"><li id="tree_14" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_14_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_14_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10301" target="_self" style="" title="1.3.1. 所有权限列表"><span id="tree_14_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_14_span">1.3.1. 所有权限列表</span></a></li><li id="tree_15" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_15_switch" title="" class="button level2 switch bottom_docu" treenode_switch=""></span><a id="tree_15_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10302" target="_self" style="" title="1.3.2. 左侧菜单权限"><span id="tree_15_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_15_span">1.3.2. 左侧菜单权限</span></a></li></ul></li><li id="tree_16" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="tree_16_switch" title="" class="button level1 switch center_open" treenode_switch=""></span><a id="tree_16_a" class="level1" treenode_a="" onclick="" href="http://47.96.21.88:8082/#104" target="_self" style="" title="1.4. 角色管理"><span id="tree_16_ico" title="" treenode_ico="" class="button ico_open" style="width:0px;height:0px;"></span><span id="tree_16_span">1.4. 角色管理</span></a><ul id="tree_16_ul" class="level1 line" style="display:block"><li id="tree_17" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_17_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_17_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10401" target="_self" style="" title="1.4.1. 角色列表"><span id="tree_17_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_17_span">1.4.1. 角色列表</span></a></li><li id="tree_18" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_18_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_18_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10402" target="_self" style="" title="1.4.2. 添加角色"><span id="tree_18_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_18_span">1.4.2. 添加角色</span></a></li><li id="tree_19" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_19_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_19_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10403" target="_self" style="" title="1.4.3. 根据ID查询角色"><span id="tree_19_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_19_span">1.4.3. 根据ID查询角色</span></a></li><li id="tree_20" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_20_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_20_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10404" target="_self" style="" title="1.4.4. 编辑提交角色"><span id="tree_20_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_20_span">1.4.4. 编辑提交角色</span></a></li><li id="tree_21" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_21_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_21_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10405" target="_self" style="" title="1.4.5. 删除角色"><span id="tree_21_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_21_span">1.4.5. 删除角色</span></a></li><li id="tree_22" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_22_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_22_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10406" target="_self" style="" title="1.4.6. 角色授权"><span id="tree_22_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_22_span">1.4.6. 角色授权</span></a></li><li id="tree_23" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_23_switch" title="" class="button level2 switch bottom_docu" treenode_switch=""></span><a id="tree_23_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10407" target="_self" style="" title="1.4.7. 删除角色指定权限"><span id="tree_23_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_23_span">1.4.7. 删除角色指定权限</span></a></li></ul></li><li id="tree_24" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="tree_24_switch" title="" class="button level1 switch center_open" treenode_switch=""></span><a id="tree_24_a" class="level1" treenode_a="" onclick="" href="http://47.96.21.88:8082/#105" target="_self" style="" title="1.5. 商品分类管理"><span id="tree_24_ico" title="" treenode_ico="" class="button ico_open" style="width:0px;height:0px;"></span><span id="tree_24_span">1.5. 商品分类管理</span></a><ul id="tree_24_ul" class="level1 line" style="display:block"><li id="tree_25" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_25_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_25_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10501" target="_self" style="" title="1.5.1. 商品数据列表"><span id="tree_25_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_25_span">1.5.1. 商品数据列表</span></a></li><li id="tree_26" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_26_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_26_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10502" target="_self" style="" title="1.5.2. 添加分类"><span id="tree_26_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_26_span">1.5.2. 添加分类</span></a></li><li id="tree_27" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_27_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_27_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10503" target="_self" style="" title="1.5.3. 根据id查询分类"><span id="tree_27_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_27_span">1.5.3. 根据id查询分类</span></a></li><li id="tree_28" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_28_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_28_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10504" target="_self" style="" title="1.5.4. 编辑提交分类"><span id="tree_28_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_28_span">1.5.4. 编辑提交分类</span></a></li><li id="tree_29" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_29_switch" title="" class="button level2 switch bottom_docu" treenode_switch=""></span><a id="tree_29_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10505" target="_self" style="" title="1.5.5. 删除分类"><span id="tree_29_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_29_span">1.5.5. 删除分类</span></a></li></ul></li><li id="tree_30" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="tree_30_switch" title="" class="button level1 switch center_open" treenode_switch=""></span><a id="tree_30_a" class="level1" treenode_a="" onclick="" href="http://47.96.21.88:8082/#106" target="_self" style="" title="1.6. 分类参数管理"><span id="tree_30_ico" title="" treenode_ico="" class="button ico_open" style="width:0px;height:0px;"></span><span id="tree_30_span">1.6. 分类参数管理</span></a><ul id="tree_30_ul" class="level1 line" style="display:block"><li id="tree_31" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_31_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_31_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10601" target="_self" style="" title="1.6.1. 参数列表"><span id="tree_31_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_31_span">1.6.1. 参数列表</span></a></li><li id="tree_32" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_32_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_32_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10602" target="_self" style="" title="1.6.2. 添加参数"><span id="tree_32_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_32_span">1.6.2. 添加参数</span></a></li><li id="tree_33" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_33_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_33_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10603" target="_self" style="" title="1.6.3. 删除参数"><span id="tree_33_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_33_span">1.6.3. 删除参数</span></a></li><li id="tree_34" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_34_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_34_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10604" target="_self" style="" title="1.6.4. 根据ID查询参数"><span id="tree_34_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_34_span">1.6.4. 根据ID查询参数</span></a></li><li id="tree_35" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_35_switch" title="" class="button level2 switch bottom_docu" treenode_switch=""></span><a id="tree_35_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10605" target="_self" style="" title="1.6.5. 编辑提交参数"><span id="tree_35_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_35_span">1.6.5. 编辑提交参数</span></a></li></ul></li><li id="tree_36" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="tree_36_switch" title="" class="button level1 switch center_open" treenode_switch=""></span><a id="tree_36_a" class="level1" treenode_a="" onclick="" href="http://47.96.21.88:8082/#107" target="_self" style="" title="1.7. 商品管理"><span id="tree_36_ico" title="" treenode_ico="" class="button ico_open" style="width:0px;height:0px;"></span><span id="tree_36_span">1.7. 商品管理</span></a><ul id="tree_36_ul" class="level1 line" style="display:block"><li id="tree_37" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_37_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_37_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10701" target="_self" style="" title="1.7.1. 商品列表数据"><span id="tree_37_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_37_span">1.7.1. 商品列表数据</span></a></li><li id="tree_38" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_38_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_38_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10702" target="_self" style="" title="1.7.2. 添加商品"><span id="tree_38_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_38_span">1.7.2. 添加商品</span></a></li><li id="tree_39" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_39_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_39_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10703" target="_self" style="" title="1.7.3. 根据ID查询商品"><span id="tree_39_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_39_span">1.7.3. 根据ID查询商品</span></a></li><li id="tree_40" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_40_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_40_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10704" target="_self" style="" title="1.7.4. 编辑提交商品"><span id="tree_40_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_40_span">1.7.4. 编辑提交商品</span></a></li><li id="tree_41" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_41_switch" title="" class="button level2 switch bottom_docu" treenode_switch=""></span><a id="tree_41_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10705" target="_self" style="" title="1.7.5. 删除商品"><span id="tree_41_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_41_span">1.7.5. 删除商品</span></a></li></ul></li><li id="tree_42" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="tree_42_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="tree_42_a" class="level1" treenode_a="" onclick="" href="http://47.96.21.88:8082/#108" target="_self" style="" title="1.8. 图片上传"><span id="tree_42_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_42_span">1.8. 图片上传</span></a></li><li id="tree_43" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="tree_43_switch" title="" class="button level1 switch center_open" treenode_switch=""></span><a id="tree_43_a" class="level1" treenode_a="" onclick="" href="http://47.96.21.88:8082/#109" target="_self" style="" title="1.9. 订单管理"><span id="tree_43_ico" title="" treenode_ico="" class="button ico_open" style="width:0px;height:0px;"></span><span id="tree_43_span">1.9. 订单管理</span></a><ul id="tree_43_ul" class="level1 line" style="display:block"><li id="tree_44" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_44_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_44_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10901" target="_self" style="" title="1.9.1. 订单数据列表"><span id="tree_44_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_44_span">1.9.1. 订单数据列表</span></a></li><li id="tree_45" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_45_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_45_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10902" target="_self" style="" title="1.9.2. 修改订单状态"><span id="tree_45_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_45_span">1.9.2. 修改订单状态</span></a></li><li id="tree_46" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_46_switch" title="" class="button level2 switch bottom_docu" treenode_switch=""></span><a id="tree_46_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#10903" target="_self" style="" title="1.9.3. 查看订单详情"><span id="tree_46_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_46_span">1.9.3. 查看订单详情</span></a></li></ul></li><li id="tree_47" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="tree_47_switch" title="" class="button level1 switch bottom_open" treenode_switch=""></span><a id="tree_47_a" class="level1" treenode_a="" onclick="" href="http://47.96.21.88:8082/#110" target="_self" style="" title="1.10. 数据统计"><span id="tree_47_ico" title="" treenode_ico="" class="button ico_open" style="width:0px;height:0px;"></span><span id="tree_47_span">1.10. 数据统计</span></a><ul id="tree_47_ul" class="level1 " style="display:block"><li id="tree_48" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_48_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_48_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#11001" target="_self" style="" title="1.10.1. 基于类型统计（饼图）"><span id="tree_48_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_48_span">1.10.1. 基于类型统计（饼图）</span></a></li><li id="tree_49" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_49_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_49_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#11002" target="_self" style="" title="1.10.2. 基于时间统计（折线图）"><span id="tree_49_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_49_span">1.10.2. 基于时间统计（折线图）</span></a></li><li id="tree_50" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_50_switch" title="" class="button level2 switch bottom_docu" treenode_switch=""></span><a id="tree_50_a" class="level2" treenode_a="" onclick="" href="http://47.96.21.88:8082/#11003" target="_self" style="" title="1.10.3. 基于销量统计（柱状图）"><span id="tree_50_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="tree_50_span">1.10.3. 基于销量统计（柱状图）</span></a></li></ul></li></ul></li></ul>
+				</div>
+        <div id="readme" style="width: 70%; margin-left: 25%;">
+          	<article class="markdown-body">
+            	<h1 id="1">1. api</h1>
+<ul>
+<li>基准路径：<a href="http://47.96.21.88:8082/api/private/v1/">http://47.96.21.88:8082/api/private/v1/</a></li>
+</ul>
+<blockquote>
+<p>除了登录接口，其他所有接口请求头必须设置为Authorization=token (token为登录成功后服务器返回的认证token)</p>
+</blockquote>
+<h2 id="101">1.1. 登录</h2>
+<h3 id="10101">1.1.1. 登录验证接口</h3>
+<ul>
+<li>请求路径：login</li>
+<li>请求方法：post</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>username</td>
+<td>用户名</td>
+<td>不能为空</td>
+</tr>
+<tr>
+<td>password</td>
+<td>密码</td>
+<td>不能为空</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>用户ID</td>
+<td></td>
+</tr>
+<tr>
+<td>rid</td>
+<td>用户角色ID</td>
+<td></td>
+</tr>
+<tr>
+<td>username</td>
+<td>用户名</td>
+<td></td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>手机号</td>
+<td></td>
+</tr>
+<tr>
+<td>email</td>
+<td>邮箱</td>
+<td></td>
+</tr>
+<tr>
+<td>token</td>
+<td>令牌</td>
+<td>基于jwt的令牌</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据<pre><code class="lang-javascript">{
+  "data": {
+      "id": 500,
+      "rid": 0,
+      "username": "admin",
+      "mobile": "123",
+      "email": "123@qq.com",
+      "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE1MTI1NDQyOTksImV4cCI6MTUxMjYzMDY5OX0.eGrsrvwHm-tPsO9r_pxHIQ5i5L1kX9RX444uwnRGaIM"
+  },
+  "meta": {
+      "msg": "登录成功",
+      "status": 200
+  }
+}
+</code></pre>
+</li>
+</ul>
+<h2 id="102">1.2. 用户管理</h2>
+<h3 id="10201">1.2.1. 用户数据列表</h3>
+<ul>
+<li>请求路径：users</li>
+<li>请求方法：get</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>query</td>
+<td>查询参数</td>
+<td>可以为空</td>
+</tr>
+<tr>
+<td>pagenum</td>
+<td>当前页码</td>
+<td>不能为空</td>
+</tr>
+<tr>
+<td>pagesize</td>
+<td>每页显示条数</td>
+<td>不能为空</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>totalpage</td>
+<td>总记录数</td>
+<td></td>
+</tr>
+<tr>
+<td>pagenum</td>
+<td>当前页码</td>
+<td></td>
+</tr>
+<tr>
+<td>users</td>
+<td>用户数据集合</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据<pre><code class="lang-javascript">{
+  "data": {
+      "totalpage": 5,
+      "pagenum": 4,
+      "users": [
+          {
+              "id": 25,
+              "username": "tige117",
+              "mobile": "18616358651",
+              "type": 1,
+              "openid": "",
+              "email": "tige112@163.com",
+              "create_time": "2017-11-09T20:36:26.000Z",
+              "modify_time": null,
+              "is_delete": false,
+              "is_active": false
+          }
+      ]
+  },
+  "meta": {
+      "msg": "获取成功",
+      "status": 200
+  }
+}
+</code></pre>
+</li>
+</ul>
+<h3 id="10202">1.2.2. 添加用户</h3>
+<ul>
+<li>请求路径：users</li>
+<li>请求方法：post</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>username</td>
+<td>用户名称</td>
+<td>不能为空</td>
+</tr>
+<tr>
+<td>password</td>
+<td>用户密码</td>
+<td>不能为空</td>
+</tr>
+<tr>
+<td>email</td>
+<td>邮箱</td>
+<td>可以为空</td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>手机号</td>
+<td>可以为空</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>用户ID</td>
+<td></td>
+</tr>
+<tr>
+<td>rid</td>
+<td>用户角色ID</td>
+<td></td>
+</tr>
+<tr>
+<td>username</td>
+<td>用户名</td>
+<td></td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>手机号</td>
+<td></td>
+</tr>
+<tr>
+<td>email</td>
+<td>邮箱</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据<pre><code class="lang-javascript">{
+  "data": {
+      "id": 28,
+      "username": "tige1200",
+      "mobile": "test",
+      "type": 1,
+      "openid": "",
+      "email": "test@test.com",
+      "create_time": "2017-11-10T03:47:13.533Z",
+      "modify_time": null,
+      "is_delete": false,
+      "is_active": false
+  },
+  "meta": {
+      "msg": "用户创建成功",
+      "status": 201
+  }
+}
+</code></pre>
+</li>
+</ul>
+<h3 id="10203">1.2.3. 修改用户状态</h3>
+<ul>
+<li>请求路径：users/:uId/state/:type</li>
+<li>请求方法：put</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uId</td>
+<td>用户ID</td>
+<td>不能为空<code>携带在url中</code></td>
+</tr>
+<tr>
+<td>type</td>
+<td>用户状态</td>
+<td>不能为空<code>携带在url中</code>，值为true或者false</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据 <pre><code class="lang-javascript">{
+"data": {
+  "id": 566,
+  "rid": 30,
+  "username": "admin",
+  "mobile": "123456",
+  "email": "bb@itcast.com",
+  "mg_state": 0
+},
+"meta": {
+  "msg": "设置状态成功",
+  "status": 200
+}
+}
+</code></pre>
+</li>
+</ul>
+<h3 id="10204">1.2.4. 根据ID查询用户信息</h3>
+<ul>
+<li>请求路径：users/:id</li>
+<li>请求方法：get</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>用户ID</td>
+<td>不能为空<code>携带在url中</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>用户ID</td>
+<td></td>
+</tr>
+<tr>
+<td>role_id</td>
+<td>角色ID</td>
+<td></td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>手机号</td>
+<td></td>
+</tr>
+<tr>
+<td>email</td>
+<td>邮箱</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据<pre><code class="lang-javascript">{
+  "data": {
+      "id": 503,
+      "username": "admin3",
+      "role_id": 0,
+      "mobile": "00000",
+      "email": "new@new.com"
+  },
+  "meta": {
+      "msg": "更新成功",
+      "status": 200
+  }
+}
+</code></pre>
+</li>
+</ul>
+<h3 id="10205">1.2.5. 编辑用户提交</h3>
+<ul>
+<li>请求路径：users/:id</li>
+<li>请求方法：put</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>用户id</td>
+<td>不能为空 <code>参数是url参数:id</code></td>
+</tr>
+<tr>
+<td>email</td>
+<td>邮箱</td>
+<td>可以为空</td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>手机号</td>
+<td>可以为空</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>用户ID</td>
+<td></td>
+</tr>
+<tr>
+<td>role_id</td>
+<td>角色ID</td>
+<td></td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>手机号</td>
+<td></td>
+</tr>
+<tr>
+<td>email</td>
+<td>邮箱</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据<pre><code class="lang-javascript">/* 200表示成功，500表示失败 */
+{
+  "data": {
+      "id": 503,
+      "username": "admin3",
+      "role_id": 0,
+      "mobile": "111",
+      "email": "123@123.com"
+  },
+  "meta": {
+      "msg": "更新成功",
+      "status": 200
+  }
+}
+</code></pre>
+<h3 id="10206">1.2.6. 删除单个用户</h3>
+</li>
+<li>请求路径：users/:id</li>
+<li>请求方法：delete</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>用户id</td>
+<td>不能为空<code>参数是url参数:id</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>响应参数</p>
+</li>
+<li><p>响应数据</p>
+<pre><code class="lang-javascript">{
+  "data": null,
+  "meta": {
+      "msg": "删除成功",
+      "status": 200
+  }
+}
+</code></pre>
+</li>
+</ul>
+<h3 id="10207">1.2.7. 分配用户角色</h3>
+<ul>
+<li>请求路径：users/:id/role</li>
+<li>请求方法：put</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>用户ID</td>
+<td>不能为空<code>参数是url参数:id</code></td>
+</tr>
+<tr>
+<td>rid</td>
+<td>角色id</td>
+<td>不能为空<code>参数body参数</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>用户ID</td>
+<td></td>
+</tr>
+<tr>
+<td>role_id</td>
+<td>角色ID</td>
+<td></td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>手机号</td>
+<td></td>
+</tr>
+<tr>
+<td>email</td>
+<td>邮箱</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据<pre><code class="lang-javascript">{
+  "data": {
+      "id": 508,
+      "rid": "30",
+      "username": "asdf1",
+      "mobile": "123123",
+      "email": "adfsa@qq.com"
+  },
+  "meta": {
+      "msg": "设置角色成功",
+      "status": 200
+  }
+}
+</code></pre>
+<h2 id="103">1.3. 权限管理</h2>
+<h3 id="10301">1.3.1. 所有权限列表</h3>
+</li>
+<li>请求路径：rights/:type</li>
+<li>请求方法：get</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>类型</td>
+<td>值: list 或 tree , list 列表显示权限, tree 树状显示权限,<code>参数是url参数:type</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>权限ID</td>
+<td></td>
+</tr>
+<tr>
+<td>authName</td>
+<td>权限说明</td>
+<td></td>
+</tr>
+<tr>
+<td>level</td>
+<td>权限层级</td>
+<td></td>
+</tr>
+<tr>
+<td>pid</td>
+<td>权限父ID</td>
+<td></td>
+</tr>
+<tr>
+<td>path</td>
+<td>对应访问路径</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据
+type=list<pre><code class="lang-javascript">  {
+  "data": [
+      {
+          "id": 101,
+          "authName": "商品管理",
+          "level": "0",
+          "pid": 0,
+          "path": null
+      },
+      {
+          "id": 102,
+          "authName": "订单管理",
+          "level": "0",
+          "pid": 0,
+          "path": null
+      }
+  ],
+  "meta": {
+      "msg": "获取权限列表成功",
+      "status": 200
+  }
+}
+</code></pre>
+type=tree<pre><code class="lang-javascript">[
+  {
+  "data": [
+      {
+          "id": 101,
+          "authName": "商品管理",
+          "path": null,
+          "pid": 0,
+          "children": [
+              {
+                  "id": 104,
+                  "authName": "商品列表",
+                  "path": null,
+                  "pid": 101,
+                  "children": [
+                      {
+                          "id": 105,
+                          "authName": "添加商品",
+                          "path": null,
+                          "pid": "104,101"
+                      }
+                  ]
+              }
+          ]
+      }
+  ],
+  "meta": {
+      "msg": "获取权限列表成功",
+      "status": 200
+  }
+}
+]
+</code></pre>
+</li>
+</ul>
+<h3 id="10302">1.3.2. 左侧菜单权限</h3>
+<ul>
+<li>请求路径：menus</li>
+<li>请求方法：get</li>
+<li>响应数据</li>
+</ul>
+<pre><code class="lang-javascript">{
+    "data": [
+        {
+            "id": 101,
+            "authName": "商品管理",
+            "path": null,
+            "children": [
+                {
+                    "id": 104,
+                    "authName": "商品列表",
+                    "path": null,
+                    "children": []
+                }
+            ]
+        }
+    "meta": {
+        "msg": "获取菜单列表成功",
+        "status": 200
+    }
+}
+</code></pre>
+<h2 id="104">1.4. 角色管理</h2>
+<h3 id="10401">1.4.1. 角色列表</h3>
+<ul>
+<li>请求路径：roles</li>
+<li>请求方法：get</li>
+<li>响应数据说明<ul>
+<li>第一层为角色信息</li>
+<li>第二层开始为权限说明，权限一共有3层权限</li>
+</ul>
+</li>
+<li>响应数据<pre><code class="lang-javascript">{
+  "data": [
+      {
+          "id": 30,
+          "roleName": "主管",
+          "roleDesc": "技术负责人",
+          "children": [
+              {
+                  "id": 101,
+                  "authName": "商品管理",
+                  "path": null,
+                  "children": [
+                      {
+                          "id": 104,
+                          "authName": "商品列表",
+                          "path": null,
+                          "children": [
+                              {
+                                  "id": 105,
+                                  "authName": "添加商品",
+                                  "path": null
+                              }
+                          ]
+                      }
+                  ]
+              }
+          ]
+      }
+  ],
+  "meta": {
+      "msg": "获取成功",
+      "status": 200
+  }
+}
+</code></pre>
+<h3 id="10402">1.4.2. 添加角色</h3>
+</li>
+<li>请求路径：roles</li>
+<li>请求方法：post</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>roleName</td>
+<td>角色名称</td>
+<td>不能为空</td>
+</tr>
+<tr>
+<td>roleDesc</td>
+<td>角色描述</td>
+<td>可以为空</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>roleId</td>
+<td>角色ID</td>
+<td></td>
+</tr>
+<tr>
+<td>roleName</td>
+<td>角色名称</td>
+<td></td>
+</tr>
+<tr>
+<td>roleDesc</td>
+<td>角色描述</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据</li>
+</ul>
+<pre><code class="lang-javascript">{
+    "data": {
+        "roleId": 40,
+        "roleName": "admin2",
+        "roleDesc": "admin2Desc"
+    },
+    "meta": {
+        "msg": "创建成功",
+        "status": 201
+    }
+}
+</code></pre>
+<h3 id="10403">1.4.3. 根据ID查询角色</h3>
+<ul>
+<li>请求路径：roles/:id</li>
+<li>请求方法：get</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:id</td>
+<td>角色ID</td>
+<td>不能为空<code>携带在url中</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>roleId</td>
+<td>角色ID</td>
+<td></td>
+</tr>
+<tr>
+<td>roleName</td>
+<td>角色名称</td>
+<td></td>
+</tr>
+<tr>
+<td>roleDesc</td>
+<td>角色描述</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据<pre><code class="lang-javascript">{
+  "data": {
+      "roleId": 31,
+      "roleName": "测试角色",
+      "roleDesc": "测试负责人"
+  },
+  "meta": {
+      "msg": "获取成功",
+      "status": 200
+  }
+}
+</code></pre>
+</li>
+</ul>
+<h3 id="10404">1.4.4. 编辑提交角色</h3>
+<ul>
+<li>请求路径：roles/:id</li>
+<li>请求方法：put</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:id</td>
+<td>角色ID</td>
+<td>不能为空<code>携带在url中</code></td>
+</tr>
+<tr>
+<td>roleName</td>
+<td>角色名称</td>
+<td>不能为空</td>
+</tr>
+<tr>
+<td>roleDesc</td>
+<td>角色描述</td>
+<td>可以为空</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据</li>
+</ul>
+<pre><code class="lang-javascript">{
+    "data": {
+        "roleId": 31,
+        "roleName": "测试角色",
+        "roleDesc": "测试角色描述"
+    },
+    "meta": {
+        "msg": "获取成功",
+        "status": 200
+    }
+}
+</code></pre>
+<h3 id="10405">1.4.5. 删除角色</h3>
+<ul>
+<li>请求路径：roles/:id</li>
+<li>请求方法：delete</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:id</td>
+<td>角色ID</td>
+<td>不能为空<code>携带在url中</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据</li>
+</ul>
+<pre><code class="lang-javascript">{
+    "data": null,
+    "meta": {
+        "msg": "删除成功",
+        "status": 200
+    }
+}
+</code></pre>
+<h3 id="10406">1.4.6. 角色授权</h3>
+<ul>
+<li>请求路径：roles/:roleId/rights</li>
+<li>请求方法：post</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:roleId</td>
+<td>角色ID</td>
+<td>不能为空<code>携带在url中</code></td>
+</tr>
+<tr>
+<td>rids</td>
+<td>权限ID列表</td>
+<td>以 <code>,</code> 分割的权限ID列表</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据</li>
+</ul>
+<pre><code class="lang-javascript">{
+    "data": null,
+    "meta": {
+        "msg": "更新成功",
+        "status": 200
+    }
+}
+</code></pre>
+<h3 id="10407">1.4.7. 删除角色指定权限</h3>
+<ul>
+<li>请求路径：roles/:roleId/rights/:rightId</li>
+<li>请求方法：delete</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:roleId</td>
+<td>角色ID</td>
+<td>不能为空<code>携带在url中</code></td>
+</tr>
+<tr>
+<td>:rightId</td>
+<td>权限ID</td>
+<td>不能为空<code>携带在url中</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据说明<ul>
+<li>返回当前所有拥有的角色信息 </li>
+</ul>
+</li>
+<li>响应数据<pre><code class="lang-javascript">{
+  "data": [
+      {
+          "id": 101,
+          "authName": "商品管理",
+          "path": null,
+          "children": [
+              {
+                  "id": 104,
+                  "authName": "商品列表",
+                  "path": null,
+                  "children": [
+                      {
+                          "id": 105,
+                          "authName": "添加商品",
+                          "path": null
+                      },
+                      {
+                          "id": 116,
+                          "authName": "修改",
+                          "path": null
+                      }
+                  ]
+              }
+          ]
+      }
+  ],
+  "meta": {
+      "msg": "取消权限成功",
+      "status": 200
+  }
+}
+</code></pre>
+<h2 id="105">1.5. 商品分类管理</h2>
+<h3 id="10501">1.5.1. 商品数据列表</h3>
+</li>
+<li>请求路径：categories</li>
+<li>请求方法：get</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>[1,2,3]</td>
+<td>值：1，2，3分别表示显示一层二层三层分类列表</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cat_id</td>
+<td>分类ID</td>
+<td></td>
+</tr>
+<tr>
+<td>cat_name</td>
+<td>分类名称</td>
+<td></td>
+</tr>
+<tr>
+<td>cat_pid</td>
+<td>分类父ID</td>
+<td></td>
+</tr>
+<tr>
+<td>cat_level</td>
+<td>分类当前层级</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据<pre><code class="lang-javascript">{
+  "data": [
+      {
+          "cat_id": 1,
+          "cat_name": "手机相机",
+          "cat_pid": 0,
+          "cat_level": 0
+      },
+      {
+          "cat_id": 2,
+          "cat_name": "电脑办公",
+          "cat_pid": 0,
+          "cat_level": 0
+      }
+  ],
+  "meta": {
+      "msg": "获取成功",
+      "status": 200
+  }
+}
+</code></pre>
+</li>
+</ul>
+<h3 id="10502">1.5.2. 添加分类</h3>
+<ul>
+<li>请求路径：categories</li>
+<li>请求方法：post</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cat_pid</td>
+<td>分类父ID</td>
+<td>不能为空</td>
+</tr>
+<tr>
+<td>cat_name</td>
+<td>分类名称</td>
+<td>不能为空</td>
+</tr>
+<tr>
+<td>cat_level</td>
+<td>分类层级</td>
+<td>不能为空</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据</li>
+</ul>
+<pre><code class="lang-javascript">{
+    "data": {
+        "cat_id": 62,
+        "cat_name": "相框",
+        "cat_pid": "1",
+        "cat_level": "1"
+    },
+    "meta": {
+        "msg": "创建成功",
+        "status": 201
+    }
+}
+</code></pre>
+<h3 id="10503">1.5.3. 根据id查询分类</h3>
+<ul>
+<li>请求路径：categories/:id</li>
+<li>请求方法：get</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:id</td>
+<td>分类ID</td>
+<td>不能为空<code>携带在url中</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据</li>
+</ul>
+<pre><code class="lang-javascript">{
+    "data": {
+        "cat_id": 3,
+        "cat_name": "厨卫电器",
+        "cat_pid": 0,
+        "cat_level": 0
+    },
+    "meta": {
+        "msg": "获取成功",
+        "status": 200
+    }
+}
+</code></pre>
+<h3 id="10504">1.5.4. 编辑提交分类</h3>
+<ul>
+<li>请求路径：categories/:id</li>
+<li>请求方法：put</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:id</td>
+<td>分类ID</td>
+<td>不能为空<code>携带在url中</code></td>
+</tr>
+<tr>
+<td>cat_name</td>
+<td>分类名称</td>
+<td>不能为空</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据</li>
+</ul>
+<pre><code class="lang-javascript">{
+    "data": {
+        "cat_id": 22,
+        "cat_name": "自拍杆",
+        "cat_pid": 7,
+        "cat_level": 2
+    },
+    "meta": {
+        "msg": "更新成功",
+        "status": 200
+    }
+}
+</code></pre>
+<h3 id="10505">1.5.5. 删除分类</h3>
+<ul>
+<li>请求路径：categories/:id</li>
+<li>请求方法：delete</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:id</td>
+<td>分类ID</td>
+<td>不能为空<code>携带在url中</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据</li>
+</ul>
+<pre><code class="lang-javascript">{
+    "data": null,
+    "meta": {
+        "msg": "删除成功",
+        "status": 200
+    }
+}
+</code></pre>
+<h2 id="106">1.6. 分类参数管理</h2>
+<h3 id="10601">1.6.1. 参数列表</h3>
+<ul>
+<li>请求路径：/:id/attributes</li>
+<li>请求方法：get</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:id</td>
+<td>分类ID</td>
+<td>不能为空<code>携带在url中</code></td>
+</tr>
+<tr>
+<td>sel</td>
+<td>[only,many]</td>
+<td>不能为空,通过only或many来获取分类静态参数还是动态参数</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>attr_id</td>
+<td>分类参数ID</td>
+<td></td>
+</tr>
+<tr>
+<td>attr_name</td>
+<td>分类参数名称</td>
+<td></td>
+</tr>
+<tr>
+<td>cat_id</td>
+<td>分类参数所属分类</td>
+<td></td>
+</tr>
+<tr>
+<td>attr_sel</td>
+<td>only:输入框(唯一)  many:后台下拉列表/前台单选框</td>
+<td></td>
+</tr>
+<tr>
+<td>attr_write</td>
+<td>manual:手工录入  list:从列表选择</td>
+<td></td>
+</tr>
+<tr>
+<td>attr_vals</td>
+<td>如果attr_write:list,那么有值，该值以逗号分隔</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据</li>
+</ul>
+<pre><code class="lang-javascript">{
+    "data": [
+        {
+            "attr_id": 1,
+            "attr_name": "cpu",
+            "cat_id": 22,
+            "attr_sel": "only",
+            "attr_write": "manual",
+            "attr_vals": "ffff"
+        }
+    ],
+    "meta": {
+        "msg": "获取成功",
+        "status": 200
+    }
+}
+</code></pre>
+<h3 id="10602">1.6.2. 添加参数</h3>
+<ul>
+<li>请求路径：/:id/attributes</li>
+<li>请求方法：post</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:id</td>
+<td>分类ID</td>
+<td>不能为空<code>携带在url中</code></td>
+</tr>
+<tr>
+<td>attr_name</td>
+<td>参数名称</td>
+<td>不能为空</td>
+</tr>
+<tr>
+<td>attr_sel</td>
+<td>[only,many]</td>
+<td>不能为空</td>
+</tr>
+<tr>
+<td>attr_vals</td>
+<td>如果是many就需要填写值的选项，以逗号分隔</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据</li>
+</ul>
+<pre><code class="lang-javascript">{
+    "data": {
+        "attr_id": 44,
+        "attr_name": "测试参数",
+        "cat_id": "1",
+        "attr_sel": "many",
+        "attr_write": "list",
+        "attr_vals": "a,b,c"
+    },
+    "meta": {
+        "msg": "创建成功",
+        "status": 201
+    }
+}
+</code></pre>
+<h3 id="10603">1.6.3. 删除参数</h3>
+<ul>
+<li>请求路径：/:id/attributes/:attrid</li>
+<li>请求方法：delete</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:id</td>
+<td>分类ID</td>
+<td>不能为空<code>携带在url中</code></td>
+</tr>
+<tr>
+<td>:attrid</td>
+<td>参数ID</td>
+<td>不能为空<code>携带在url中</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据</li>
+</ul>
+<pre><code class="lang-javascript">{
+    "data": null,
+    "meta": {
+        "msg": "删除成功",
+        "status": 200
+    }
+}
+</code></pre>
+<h3 id="10604">1.6.4. 根据ID查询参数</h3>
+<ul>
+<li>请求路径：/:id/attributes/:attrId</li>
+<li>请求方法：get</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:id</td>
+<td>分类ID</td>
+<td>不能为空<code>携带在url中</code></td>
+</tr>
+<tr>
+<td>:attrId</td>
+<td>属性ID</td>
+<td>不能为空<code>携带在url中</code></td>
+</tr>
+<tr>
+<td>attr_sel</td>
+<td>[only,many]</td>
+<td>不能为空</td>
+</tr>
+<tr>
+<td>attr_vals</td>
+<td>如果是many就需要填写值的选项，以逗号分隔</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据</li>
+</ul>
+<pre><code class="lang-javascript">{
+    "data": {
+        "attr_id": 1,
+        "attr_name": "cpu",
+        "cat_id": 22,
+        "attr_sel": "only",
+        "attr_write": "manual",
+        "attr_vals": "ffff"
+    },
+    "meta": {
+        "msg": "获取成功",
+        "status": 200
+    }
+}
+</code></pre>
+<h3 id="10605">1.6.5. 编辑提交参数</h3>
+<ul>
+<li>请求路径：/:id/attributes/:attrId</li>
+<li>请求方法：put</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:id</td>
+<td>分类ID</td>
+<td>不能为空<code>携带在url中</code></td>
+</tr>
+<tr>
+<td>:attrId</td>
+<td>属性ID</td>
+<td>不能为空<code>携带在url中</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据</li>
+</ul>
+<pre><code class="lang-javascript">{
+    "data": {
+        "attr_id": 9,
+        "attr_name": "测试更新",
+        "cat_id": "43",
+        "attr_sel": "only",
+        "attr_write": "manual",
+        "attr_vals": "abc"
+    },
+    "meta": {
+        "msg": "更新成功",
+        "status": 200
+    }
+}
+</code></pre>
+<h2 id="107">1.7. 商品管理</h2>
+<h3 id="10701">1.7.1. 商品列表数据</h3>
+<ul>
+<li>请求路径：goods</li>
+<li>请求方法：get</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>query</td>
+<td>查询参数</td>
+<td>可以为空</td>
+</tr>
+<tr>
+<td>pagenum</td>
+<td>当前页码</td>
+<td>不能为空</td>
+</tr>
+<tr>
+<td>pagesize</td>
+<td>每页显示条数</td>
+<td>不能为空</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>total</td>
+<td>总共商品条数</td>
+<td></td>
+</tr>
+<tr>
+<td>pagenum</td>
+<td>当前商品页数</td>
+<td></td>
+</tr>
+<tr>
+<td>goods_id</td>
+<td>商品ID</td>
+<td></td>
+</tr>
+<tr>
+<td>goods_name</td>
+<td>商品名称</td>
+<td></td>
+</tr>
+<tr>
+<td>goods_price</td>
+<td>价格</td>
+<td></td>
+</tr>
+<tr>
+<td>goods_number</td>
+<td>数量</td>
+<td></td>
+</tr>
+<tr>
+<td>goods_weight</td>
+<td>重量</td>
+<td>不能为空</td>
+</tr>
+<tr>
+<td>goods_state</td>
+<td>商品状态</td>
+<td>商品状态 0: 未通过 1: 审核中 2: 已审核</td>
+</tr>
+<tr>
+<td>add_time</td>
+<td>添加时间</td>
+<td></td>
+</tr>
+<tr>
+<td>upd_time</td>
+<td>更新时间</td>
+<td></td>
+</tr>
+<tr>
+<td>hot_mumber</td>
+<td>热销品数量</td>
+<td></td>
+</tr>
+<tr>
+<td>is_promote</td>
+<td>是否是热销品</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据</li>
+</ul>
+<pre><code class="lang-javascript">{
+    "data": {
+        "total": 50,
+        "pagenum": "1",
+        "goods": [
+            {
+                "goods_id": 144,
+                "goods_name": "asfdsd",
+                "goods_price": 1,
+                "goods_number": 1,
+                "goods_weight": 1,
+                "goods_state": null,
+                "add_time": 1512954923,
+                "upd_time": 1512954923,
+                "hot_mumber": 0,
+                "is_promote": false
+            }
+        ]
+    },
+    "meta": {
+        "msg": "获取成功",
+        "status": 200
+    }
+}
+</code></pre>
+<h3 id="10702">1.7.2. 添加商品</h3>
+<ul>
+<li>请求路径：goods</li>
+<li>请求方法：post</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>goods_name</td>
+<td>商品名称</td>
+<td>不能为空</td>
+</tr>
+<tr>
+<td>goods_cat</td>
+<td>以为','分割的分类列表</td>
+<td>不能为空</td>
+</tr>
+<tr>
+<td>goods_price</td>
+<td>价格</td>
+<td>不能为空</td>
+</tr>
+<tr>
+<td>goods_number</td>
+<td>数量</td>
+<td>不能为空</td>
+</tr>
+<tr>
+<td>goods_weight</td>
+<td>重量</td>
+<td>不能为空</td>
+</tr>
+<tr>
+<td>goods_introduce</td>
+<td>介绍</td>
+<td>可以为空</td>
+</tr>
+<tr>
+<td>pics</td>
+<td>上传的图片临时路径（对象）</td>
+<td>可以为空</td>
+</tr>
+<tr>
+<td>attrs</td>
+<td>商品的参数（数组）</td>
+<td>可以为空</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>请求数据</li>
+</ul>
+<pre><code class="lang-javascript">{
+    "goods_name":"test_goods_name2",
+    "goods_price":20,
+    "goods_number":30,
+    "goods_weight":40,
+    "goods_introduce":"abc",
+    "pics":[
+        {"pic":"/tmp_uploads/30f08d52c551ecb447277eae232304b8"}
+        ],
+    "attrs":[
+        {
+            "attr_id":15,
+            "attr_value":"ddd"
+        },
+        {
+            "attr_id":15,
+            "attr_value":"eee"
+        }
+        ]
+}
+</code></pre>
+<ul>
+<li>响应参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>total</td>
+<td>总共商品条数</td>
+<td></td>
+</tr>
+<tr>
+<td>pagenum</td>
+<td>当前商品页数</td>
+<td></td>
+</tr>
+<tr>
+<td>goods_id</td>
+<td>商品ID</td>
+<td></td>
+</tr>
+<tr>
+<td>goods_cat</td>
+<td>以为','分割的分类列表</td>
+<td></td>
+</tr>
+<tr>
+<td>goods_name</td>
+<td>商品名称</td>
+<td></td>
+</tr>
+<tr>
+<td>goods_price</td>
+<td>价格</td>
+<td></td>
+</tr>
+<tr>
+<td>goods_number</td>
+<td>数量</td>
+<td></td>
+</tr>
+<tr>
+<td>goods_weight</td>
+<td>重量</td>
+<td>不能为空</td>
+</tr>
+<tr>
+<td>goods_state</td>
+<td>商品状态</td>
+<td>商品状态 0: 未通过 1: 审核中 2: 已审核</td>
+</tr>
+<tr>
+<td>add_time</td>
+<td>添加时间</td>
+<td></td>
+</tr>
+<tr>
+<td>upd_time</td>
+<td>更新时间</td>
+<td></td>
+</tr>
+<tr>
+<td>hot_mumber</td>
+<td>热销品数量</td>
+<td></td>
+</tr>
+<tr>
+<td>is_promote</td>
+<td>是否是热销品</td>
+<td></td>
+</tr>
+<tr>
+<td>pics</td>
+<td>上传的图片临时路径（对象）</td>
+<td>pics_id:图片ID,goods_id:商品ID,pics_big:大图,pics_mid:中图,pics_sma:小图</td>
+</tr>
+<tr>
+<td>attrs</td>
+<td>商品的参数（数组）</td>
+<td>goods_id:商品ID,attr_value:当前商品的参数值,add_price:浮动价格,attr_vals:预定义的参数值,attr_sel:手动输入，还是单选,</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据</li>
+</ul>
+<pre><code class="lang-javascript">{
+    "data": {
+        "goods_id": 145,
+        "goods_name": "test_goods_name2",
+        "goods_price": 20,
+        "cat_id": 1,
+        "goods_number": 30,
+        "goods_weight": 40,
+        "goods_introduce": "abc",
+        "goods_big_logo": "",
+        "goods_small_logo": "",
+        "goods_state": 1,
+        "add_time": 1512962370,
+        "upd_time": 1512962370,
+        "hot_mumber": 0,
+        "is_promote": false,
+        "pics": [
+            {
+                "pics_id": 397,
+                "goods_id": 145,
+                "pics_big": "uploads/goodspics/big_30f08d52c551ecb447277eae232304b8",
+                "pics_mid": "uploads/goodspics/mid_30f08d52c551ecb447277eae232304b8",
+                "pics_sma": "uploads/goodspics/sma_30f08d52c551ecb447277eae232304b8"
+            }
+        ],
+        "attrs": [
+            {
+                "goods_id": 145,
+                "attr_id": 15,
+                "attr_value": "ddd",
+                "add_price": null,
+                "attr_name": "fffffff",
+                "attr_sel": "many",
+                "attr_write": "list",
+                "attr_vals": ""
+            },
+            {
+                "goods_id": 145,
+                "attr_id": 15,
+                "attr_value": "eee",
+                "add_price": null,
+                "attr_name": "fffffff",
+                "attr_sel": "many",
+                "attr_write": "list",
+                "attr_vals": ""
+            }
+        ]
+    },
+    "meta": {
+        "msg": "创建商品成功",
+        "status": 201
+    }
+}
+</code></pre>
+<h3 id="10703">1.7.3. 根据ID查询商品</h3>
+<ul>
+<li>请求路径：goods/:id</li>
+<li>请求方法：get</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>商品ID</td>
+<td>不能为空<code>携带在url中</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>total</td>
+<td>总共商品条数</td>
+<td></td>
+</tr>
+<tr>
+<td>pagenum</td>
+<td>当前商品页数</td>
+<td></td>
+</tr>
+<tr>
+<td>goods_id</td>
+<td>商品ID</td>
+<td></td>
+</tr>
+<tr>
+<td>goods_name</td>
+<td>商品名称</td>
+<td></td>
+</tr>
+<tr>
+<td>goods_price</td>
+<td>价格</td>
+<td></td>
+</tr>
+<tr>
+<td>goods_number</td>
+<td>数量</td>
+<td></td>
+</tr>
+<tr>
+<td>goods_weight</td>
+<td>重量</td>
+<td>不能为空</td>
+</tr>
+<tr>
+<td>goods_state</td>
+<td>商品状态</td>
+<td>商品状态 0: 未通过 1: 审核中 2: 已审核</td>
+</tr>
+<tr>
+<td>add_time</td>
+<td>添加时间</td>
+<td></td>
+</tr>
+<tr>
+<td>upd_time</td>
+<td>更新时间</td>
+<td></td>
+</tr>
+<tr>
+<td>hot_mumber</td>
+<td>热销品数量</td>
+<td></td>
+</tr>
+<tr>
+<td>is_promote</td>
+<td>是否是热销品</td>
+<td></td>
+</tr>
+<tr>
+<td>pics</td>
+<td>上传的图片临时路径（对象）</td>
+<td>pics_id:图片ID,goods_id:商品ID,pics_big:大图,pics_mid:中图,pics_sma:小图</td>
+</tr>
+<tr>
+<td>attrs</td>
+<td>商品的参数（数组）</td>
+<td>goods_id:商品ID,attr_value:当前商品的参数值,add_price:浮动价格,attr_vals:预定义的参数值,attr_sel:手动输入，还是单选,</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据</li>
+</ul>
+<pre><code class="lang-javascript">{
+    "data": {
+        "goods_id": 145,
+        "goods_name": "test_goods_name2",
+        "goods_price": 20,
+        "goods_number": 30,
+        "goods_weight": 40,
+        "goods_introduce": "abc",
+        "goods_big_logo": "",
+        "goods_small_logo": "",
+        "goods_state": 1,
+        "add_time": 1512962370,
+        "upd_time": 1512962370,
+        "hot_mumber": 0,
+        "is_promote": false,
+        "pics": [
+            {
+                "pics_id": 397,
+                "goods_id": 145,
+                "pics_big": "uploads/goodspics/big_30f08d52c551ecb447277eae232304b8",
+                "pics_mid": "uploads/goodspics/mid_30f08d52c551ecb447277eae232304b8",
+                "pics_sma": "uploads/goodspics/sma_30f08d52c551ecb447277eae232304b8"
+            }
+        ],
+        "attrs": [
+            {
+                "goods_id": 145,
+                "attr_id": 15,
+                "attr_value": "ddd",
+                "add_price": null,
+                "attr_name": "fffffff",
+                "attr_sel": "many",
+                "attr_write": "list",
+                "attr_vals": ""
+            },
+            {
+                "goods_id": 145,
+                "attr_id": 15,
+                "attr_value": "eee",
+                "add_price": null,
+                "attr_name": "fffffff",
+                "attr_sel": "many",
+                "attr_write": "list",
+                "attr_vals": ""
+            }
+        ]
+    },
+    "meta": {
+        "msg": "创建商品成功",
+        "status": 201
+    }
+}
+</code></pre>
+<h3 id="10704">1.7.4. 编辑提交商品</h3>
+<ul>
+<li>请求路径：goods/:id</li>
+<li>请求方法：put</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>商品ID</td>
+<td>不能为空<code>携带在url中</code></td>
+</tr>
+<tr>
+<td>goods_name</td>
+<td>商品名称</td>
+<td>不能为空</td>
+</tr>
+<tr>
+<td>goods_price</td>
+<td>价格</td>
+<td>不能为空</td>
+</tr>
+<tr>
+<td>goods_number</td>
+<td>数量</td>
+<td>不能为空</td>
+</tr>
+<tr>
+<td>goods_weight</td>
+<td>重量</td>
+<td>不能为空</td>
+</tr>
+<tr>
+<td>goods_introduce</td>
+<td>介绍</td>
+<td>可以为空</td>
+</tr>
+<tr>
+<td>pics</td>
+<td>上传的图片临时路径（对象）</td>
+<td>可以为空</td>
+</tr>
+<tr>
+<td>attrs</td>
+<td>商品的参数（数组）</td>
+<td>可以为空</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>请求数据</p>
+<pre><code class="lang-javascript">{
+  "goods_name":"test_goods_name2",
+  "goods_price":20,
+  "goods_number":30,
+  "goods_weight":40,
+  "goods_introduce":"abc",
+  "pics":[
+      {"pic":"/tmp_uploads/30f08d52c551ecb447277eae232304b8"}
+      ],
+  "attrs":[
+      {
+          "attr_id":15,
+          "attr_value":"ddd"
+      },
+      {
+          "attr_id":15,
+          "attr_value":"eee"
+      }
+      ]
+}
+</code></pre>
+</li>
+<li><p>响应参数</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>total</td>
+<td>总共商品条数</td>
+<td></td>
+</tr>
+<tr>
+<td>pagenum</td>
+<td>当前商品页数</td>
+<td></td>
+</tr>
+<tr>
+<td>goods_id</td>
+<td>商品ID</td>
+<td></td>
+</tr>
+<tr>
+<td>goods_name</td>
+<td>商品名称</td>
+<td></td>
+</tr>
+<tr>
+<td>goods_price</td>
+<td>价格</td>
+<td></td>
+</tr>
+<tr>
+<td>goods_number</td>
+<td>数量</td>
+<td></td>
+</tr>
+<tr>
+<td>goods_weight</td>
+<td>重量</td>
+<td>不能为空</td>
+</tr>
+<tr>
+<td>goods_state</td>
+<td>商品状态</td>
+<td>商品状态 0: 未通过 1: 审核中 2: 已审核</td>
+</tr>
+<tr>
+<td>add_time</td>
+<td>添加时间</td>
+<td></td>
+</tr>
+<tr>
+<td>upd_time</td>
+<td>更新时间</td>
+<td></td>
+</tr>
+<tr>
+<td>hot_mumber</td>
+<td>热销品数量</td>
+<td></td>
+</tr>
+<tr>
+<td>is_promote</td>
+<td>是否是热销品</td>
+<td></td>
+</tr>
+<tr>
+<td>pics</td>
+<td>上传的图片临时路径（对象）</td>
+<td>pics_id:图片ID,goods_id:商品ID,pics_big:大图,pics_mid:中图,pics_sma:小图</td>
+</tr>
+<tr>
+<td>attrs</td>
+<td>商品的参数（数组）</td>
+<td>goods_id:商品ID,attr_value:当前商品的参数值,add_price:浮动价格,attr_vals:预定义的参数值,attr_sel:手动输入，还是单选,</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据</li>
+</ul>
+<pre><code class="lang-javascript">{
+    "data": {
+        "goods_id": 145,
+        "goods_name": "test_goods_name2",
+        "goods_price": 20,
+        "goods_number": 30,
+        "goods_weight": 40,
+        "goods_introduce": "abc",
+        "goods_big_logo": "",
+        "goods_small_logo": "",
+        "goods_state": 1,
+        "add_time": 1512962370,
+        "upd_time": 1512962370,
+        "hot_mumber": 0,
+        "is_promote": false,
+        "pics": [
+            {
+                "pics_id": 397,
+                "goods_id": 145,
+                "pics_big": "uploads/goodspics/big_30f08d52c551ecb447277eae232304b8",
+                "pics_mid": "uploads/goodspics/mid_30f08d52c551ecb447277eae232304b8",
+                "pics_sma": "uploads/goodspics/sma_30f08d52c551ecb447277eae232304b8"
+            }
+        ],
+        "attrs": [
+            {
+                "goods_id": 145,
+                "attr_id": 15,
+                "attr_value": "ddd",
+                "add_price": null,
+                "attr_name": "fffffff",
+                "attr_sel": "many",
+                "attr_write": "list",
+                "attr_vals": ""
+            },
+            {
+                "goods_id": 145,
+                "attr_id": 15,
+                "attr_value": "eee",
+                "add_price": null,
+                "attr_name": "fffffff",
+                "attr_sel": "many",
+                "attr_write": "list",
+                "attr_vals": ""
+            }
+        ]
+    },
+    "meta": {
+        "msg": "创建商品成功",
+        "status": 201
+    }
+}
+</code></pre>
+<h3 id="10705">1.7.5. 删除商品</h3>
+<ul>
+<li>请求路径：goods/:id</li>
+<li>请求方法：delete</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>商品ID</td>
+<td>不能为空<code>携带在url中</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据</li>
+</ul>
+<pre><code class="lang-javascript">{
+    "data": null,
+    "meta": {
+        "msg": "删除成功",
+        "status": 200
+    }
+}
+</code></pre>
+<p>###同步商品图片</p>
+<ul>
+<li>请求路径：goods/:id/pics</li>
+<li>请求方法：put</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>商品ID</td>
+<td>不能为空<code>携带在url中</code></td>
+</tr>
+<tr>
+<td>pics</td>
+<td>商品图片集合</td>
+<td>如果有pics_id字段会保留该图片，如果没有pics_id但是有pic字段就会新生成图片数据</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>请求数据</li>
+</ul>
+<pre><code class="lang-javascript">[
+    {"pic":"tmp_uploads/db28f6316835836e97653b5c75e418be.png"},
+    {
+                "pics_id": 397,
+                "goods_id": 145,
+                "pics_big": "uploads/goodspics/big_30f08d52c551ecb447277eae232304b8",
+                "pics_mid": "uploads/goodspics/mid_30f08d52c551ecb447277eae232304b8",
+                "pics_sma": "uploads/goodspics/sma_30f08d52c551ecb447277eae232304b8"
+                }
+]
+</code></pre>
+<ul>
+<li>响应数据</li>
+</ul>
+<pre><code class="lang-javascript">{
+    "data": {
+        "goods_id": 96,
+        "goods_name": "iphoneXX",
+        "goods_price": 2,
+        "goods_number": 22,
+        "goods_weight": 22,
+        "goods_introduce": null,
+        "goods_big_logo": "./uploads/goods/20171113/483a3b8e99e534ec3e4312dbbaee7c9d.jpg",
+        "goods_small_logo": "./uploads/goods/20171113/small_483a3b8e99e534ec3e4312dbbaee7c9d.jpg",
+        "goods_state": 0,
+        "is_del": "1",
+        "add_time": 1510045904,
+        "upd_time": 1512635159,
+        "delete_time": 1512635159,
+        "hot_mumber": 0,
+        "is_promote": false,
+        "pics": [
+            {
+                "pics_id": 383,
+                "goods_id": 96,
+                "pics_big": "uploads/goodspics/big_6f5750132abd3f5b2b93dd722fcde653.jpg",
+                "pics_mid": "uploads/goodspics/mid_6f5750132abd3f5b2b93dd722fcde653.jpg",
+                "pics_sma": "uploads/goodspics/sma_6f5750132abd3f5b2b93dd722fcde653.jpg"
+            }
+        ],
+        "attrs": [
+            {
+                "goods_id": 96,
+                "attr_id": 15,
+                "attr_value": "eee",
+                "add_price": null,
+                "attr_name": "fffffff",
+                "attr_sel": "many",
+                "attr_write": "list",
+                "attr_vals": ""
+            },
+            {
+                "goods_id": 96,
+                "attr_id": 15,
+                "attr_value": "ddd",
+                "add_price": null,
+                "attr_name": "fffffff",
+                "attr_sel": "many",
+                "attr_write": "list",
+                "attr_vals": ""
+            }
+        ]
+    },
+    "meta": {
+        "msg": "更新成功",
+        "status": 200
+    }
+}
+</code></pre>
+<p>###同步商品属性</p>
+<ul>
+<li>请求路径：goods/:id/attributes</li>
+<li>请求方法：put</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>商品ID</td>
+<td>不能为空<code>携带在url中</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>请求数据</li>
+</ul>
+<pre><code class="lang-javascript">[
+    {
+        "attr_id":15,
+        "attr_value":"ddd"
+    },
+    {
+        "attr_id":15,
+        "attr_value":"eee"
+    }
+]
+</code></pre>
+<ul>
+<li>响应数据</li>
+</ul>
+<pre><code class="lang-javascript">{
+    "data": {
+        "goods_id": 96,
+        "goods_name": "iphoneXX",
+        "goods_price": 2,
+        "goods_number": 22,
+        "goods_weight": 22,
+        "goods_introduce": null,
+        "goods_big_logo": "./uploads/goods/20171113/483a3b8e99e534ec3e4312dbbaee7c9d.jpg",
+        "goods_small_logo": "./uploads/goods/20171113/small_483a3b8e99e534ec3e4312dbbaee7c9d.jpg",
+        "goods_state": 0,
+        "is_del": "1",
+        "add_time": 1510045904,
+        "upd_time": 1512635159,
+        "delete_time": 1512635159,
+        "hot_mumber": 0,
+        "is_promote": false,
+        "pics": [
+            {
+                "pics_id": 383,
+                "goods_id": 96,
+                "pics_big": "uploads/goodspics/big_6f5750132abd3f5b2b93dd722fcde653.jpg",
+                "pics_mid": "uploads/goodspics/mid_6f5750132abd3f5b2b93dd722fcde653.jpg",
+                "pics_sma": "uploads/goodspics/sma_6f5750132abd3f5b2b93dd722fcde653.jpg"
+            }
+        ],
+        "attrs": [
+            {
+                "goods_id": 96,
+                "attr_id": 15,
+                "attr_value": "eee",
+                "add_price": null,
+                "attr_name": "fffffff",
+                "attr_sel": "many",
+                "attr_write": "list",
+                "attr_vals": ""
+            },
+            {
+                "goods_id": 96,
+                "attr_id": 15,
+                "attr_value": "ddd",
+                "add_price": null,
+                "attr_name": "fffffff",
+                "attr_sel": "many",
+                "attr_write": "list",
+                "attr_vals": ""
+            }
+        ]
+    },
+    "meta": {
+        "msg": "更新成功",
+        "status": 200
+    }
+}
+</code></pre>
+<p>###商品图片处理必须安装GraphicsMagick</p>
+<ul>
+<li>linux</li>
+</ul>
+<pre><code>apt-get install GraphicsMagick
+</code></pre><ul>
+<li><p>Mac OS X</p>
+<pre><code>brew install GraphicsMagick
+</code></pre></li>
+<li><p>Windows
+<a href="https://sourceforge.net/projects/graphicsmagick/files/graphicsmagick-binaries/1.3.27/GraphicsMagick-1.3.27-Q8-win64-dll.exe/download">点击下载</a> </p>
+</li>
+</ul>
+<h2 id="108">1.8. 图片上传</h2>
+<ul>
+<li>请求路径：upload</li>
+<li>请求方法：post</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>file</td>
+<td>上传文件</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据</li>
+</ul>
+<pre><code class="lang-javascript">{
+    "data": {
+        "tmp_path": "tmp_uploads/ccfc5179a914e94506bcbb7377e8985f.png",
+        "url": "http://127.0.0.1:8888tmp_uploads/ccfc5179a914e94506bcbb7377e8985f.png"
+    },
+    "meta": {
+        "msg": "上传成功",
+        "status": 200
+    }
+}
+</code></pre>
+<h2 id="109">1.9. 订单管理</h2>
+<h3 id="10901">1.9.1. 订单数据列表</h3>
+<ul>
+<li>请求路径：orders</li>
+<li>请求方法：get</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>query</td>
+<td>查询参数</td>
+<td>可以为空</td>
+</tr>
+<tr>
+<td>pagenum</td>
+<td>当前页码</td>
+<td>不能为空</td>
+</tr>
+<tr>
+<td>pagesize</td>
+<td>每页显示条数</td>
+<td>不能为空</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>用户ID</td>
+<td>可以为空</td>
+</tr>
+<tr>
+<td>pay_status</td>
+<td>支付状态</td>
+<td>可以为空</td>
+</tr>
+<tr>
+<td>is_send</td>
+<td>是否发货</td>
+<td>可以为空</td>
+</tr>
+<tr>
+<td>order_fapiao_title</td>
+<td>['个人','公司']</td>
+<td>可以为空</td>
+</tr>
+<tr>
+<td>order_fapiao_company</td>
+<td>公司名称</td>
+<td>可以为空</td>
+</tr>
+<tr>
+<td>order_fapiao_content</td>
+<td>发票内容</td>
+<td>可以为空</td>
+</tr>
+<tr>
+<td>consignee_addr</td>
+<td>发货地址</td>
+<td>可以为空</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据</li>
+</ul>
+<pre><code class="lang-javascript">{
+    "data": {
+        "total": 1,
+        "pagenum": "1",
+        "goods": [
+            {
+                "order_id": 47,
+                "user_id": 133,
+                "order_number": "itcast-59e7502d7993d",
+                "order_price": 322,
+                "order_pay": "1",
+                "is_send": "是",
+                "trade_no": "",
+                "order_fapiao_title": "个人",
+                "order_fapiao_company": "",
+                "order_fapiao_content": "办公用品",
+                "consignee_addr": "a:7:{s:6:\"cgn_id\";i:1;s:7:\"user_id\";i:133;s:8:\"cgn_name\";s:9:\"王二柱\";s:11:\"cgn_address\";s:51:\"北京市海淀区苏州街长远天地大厦305室\";s:7:\"cgn_tel\";s:11:\"13566771298\";s:8:\"cgn_code\";s:6:\"306810\";s:11:\"delete_time\";N;}",
+                "pay_status": "1",
+                "create_time": 1508331565,
+                "update_time": 1508331565
+            }
+        ]
+    },
+    "meta": {
+        "msg": "获取成功",
+        "status": 200
+    }
+}
+</code></pre>
+<h3 id="10902">1.9.2. 修改订单状态</h3>
+<ul>
+<li>请求路径：orders/:id</li>
+<li>请求方法：put</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>订单ID</td>
+<td>不能为空<code>携带在url中</code></td>
+</tr>
+<tr>
+<td>is_send</td>
+<td>订单是否发货</td>
+<td>1:已经发货，0:未发货</td>
+</tr>
+<tr>
+<td>order_pay</td>
+<td>订单支付</td>
+<td>支付方式  0未支付 1支付宝  2微信  3银行卡</td>
+</tr>
+<tr>
+<td>order_price</td>
+<td>订单价格</td>
+<td></td>
+</tr>
+<tr>
+<td>order_number</td>
+<td>订单数量</td>
+<td></td>
+</tr>
+<tr>
+<td>pay_status</td>
+<td>支付状态</td>
+<td>订单状态： 0未付款、1已付款</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>请求数据说明</p>
+<ul>
+<li>所有请求数据都是增量更新，如果参数不填写，就不会更新该字段</li>
+</ul>
+</li>
+<li><p>响应数据</p>
+</li>
+</ul>
+<pre><code class="lang-javascript">{
+    "data": {
+        "order_id": 67,
+        "user_id": 1,
+        "order_number": "itcast-g7kmck71vjaujfgoi",
+        "order_price": 20,
+        "order_pay": "0",
+        "is_send": "否",
+        "trade_no": "",
+        "order_fapiao_title": "个人",
+        "order_fapiao_company": "",
+        "order_fapiao_content": "",
+        "consignee_addr": "",
+        "pay_status": "0",
+        "create_time": 1512533560,
+        "update_time": 1512533560,
+        "goods": [
+            {
+                "id": 82,
+                "order_id": 67,
+                "goods_id": 96,
+                "goods_price": 333,
+                "goods_number": 2,
+                "goods_total_price": 999
+            },
+            {
+                "id": 83,
+                "order_id": 67,
+                "goods_id": 95,
+                "goods_price": 666,
+                "goods_number": 5,
+                "goods_total_price": 999
+            }
+        ]
+    },
+    "meta": {
+        "msg": "获取成功",
+        "status": 200
+    }
+}
+</code></pre>
+<h3 id="10903">1.9.3. 查看订单详情</h3>
+<ul>
+<li>请求路径：orders/:id</li>
+<li>请求方法：get</li>
+<li>请求参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>订单ID</td>
+<td>不能为空<code>携带在url中</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应数据</li>
+</ul>
+<pre><code class="lang-javascript">{
+    "data": {
+        "order_id": 67,
+        "user_id": 1,
+        "order_number": "itcast-g7kmck71vjaujfgoi",
+        "order_price": 20,
+        "order_pay": "0",
+        "is_send": "否",
+        "trade_no": "",
+        "order_fapiao_title": "个人",
+        "order_fapiao_company": "",
+        "order_fapiao_content": "",
+        "consignee_addr": "",
+        "pay_status": "0",
+        "create_time": 1512533560,
+        "update_time": 1512533560,
+        "goods": [
+            {
+                "id": 82,
+                "order_id": 67,
+                "goods_id": 96,
+                "goods_price": 333,
+                "goods_number": 2,
+                "goods_total_price": 999
+            },
+            {
+                "id": 83,
+                "order_id": 67,
+                "goods_id": 95,
+                "goods_price": 666,
+                "goods_number": 5,
+                "goods_total_price": 999
+            }
+        ]
+    },
+    "meta": {
+        "msg": "获取成功",
+        "status": 200
+    }
+}
+</code></pre>
+<h2 id="110">1.10. 数据统计</h2>
+<h3 id="11001">1.10.1. 基于类型统计（饼图）</h3>
+<ul>
+<li>请求路径：reports/:type</li>
+<li>请求方法：get</li>
+<li>响应数据</li>
+</ul>
+<h3 id="11002">1.10.2. 基于时间统计（折线图）</h3>
+<ul>
+<li>请求路径：reports/:type</li>
+<li>请求方法：get</li>
+<li>响应数据</li>
+</ul>
+<h3 id="11003">1.10.3. 基于销量统计（柱状图）</h3>
+<ul>
+<li>请求路径：reports/:type</li>
+<li>请求方法：get</li>
+<li>响应数据</li>
+</ul>
+
+          	</article>
+        </div>
+		</div>
+  
+
+<script type="text/javascript" src="./i5ting_ztree_toc_api_files/jquery-1.4.4.min.js.下载"></script>
+<script type="text/javascript" src="./i5ting_ztree_toc_api_files/jquery.ztree.all-3.5.min.js.下载"></script>
+<script type="text/javascript" src="./i5ting_ztree_toc_api_files/ztree_toc.js.下载"></script>
+<script type="text/javascript" src="./i5ting_ztree_toc_api_files/toc_conf.js.下载"></script>
+
+<script type="text/javascript">
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</script></body></html>

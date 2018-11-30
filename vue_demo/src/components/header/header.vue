@@ -1,10 +1,10 @@
 <template>
-    <div class="header">
+    <div class="header" title="title">
        <!-- <span class="left">
            <i class="iconfont icon-sousuo"></i>
        </span> -->
        <slot name="left"></slot>
-        <span class="content">{{title}}</span>
+        <!-- <span class="content">{{title}}</span> -->
         <slot name="right"></slot>
         <!-- <span class="right">
             <a href="javascript:;">登录</a>|<a href="javascript:;">注册</a>

@@ -1,7 +1,7 @@
 <template>
 <div>
    <router-view></router-view>
-   <footerGuide v-show="$route.mate.showFooter"></footerGuide>  
+   <footerGuide></footerGuide>  
 </div>
 </template>
 
