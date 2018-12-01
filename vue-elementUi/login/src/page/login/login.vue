@@ -5,7 +5,7 @@
             <el-input v-model="form.username" placeholder="账户"></el-input>
         </el-form-item>
         <el-form-item  prop="password">
-            <el-input v-model="form.password" type="password" placeholder="密码" v-on:keyup.13="submitForm('form')"></el-input>
+            <el-input v-model="form.password" type="password" placeholder="密码" v-on:keyup.enter.native="submitForm('form')"></el-input>
         </el-form-item>
         <el-form-item class="btn">
             <el-button type="primary" @click="submitForm('form')"  round class="btn1">立即创建</el-button>
