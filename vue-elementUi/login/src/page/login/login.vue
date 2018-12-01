@@ -41,6 +41,8 @@ import  { checkUser } from "@/app/axios.js"
                           if(res.meta.status == 200){
                               this.$message({message:'登录成功',type : "success"});
                               localStorage.setItem("token", res.data.token)
+                              localStorage.setItem("username", res.data.username)
+                              this.$store.commit("setUsername",res.data.username)  
                               this.$router.push("/home")
                           }else{
                               this.$message({ message: res.meta.msg, type : "error"});
