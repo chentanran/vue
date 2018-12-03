@@ -18,8 +18,8 @@ var store = new Vuex.Store({
     },
     getters:{
         username(state){
-           let username = localStorage.getItem("username")
-           return username
+            return  localStorage.getItem("username")
+          
         }
     }
 })

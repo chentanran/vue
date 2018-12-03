@@ -8,19 +8,19 @@ import "@/styles/reset.scss"  //初始化样式
 
 Vue.use(ElementUI)
 
-import {
+// import {
   // Pagination,
   // Dialog,
   // Autocomplete,
   // Dropdown,
   // DropdownMenu,
   // DropdownItem,
-  Menu,
-  Submenu,
-  MenuItem,
-  MenuItemGroup,
-  Input,
-  InputNumber,
+  // Menu,
+  // Submenu,
+  // MenuItem,
+  // MenuItemGroup,
+  // Input,
+  // InputNumber,
   // Radio,
   // RadioGroup,
   // RadioButton,
@@ -31,19 +31,19 @@ import {
   // Select,
   // Option,
   // OptionGroup,
-  Button,
-  ButtonGroup,
-  Table,
-  TableColumn,
+  // Button,
+  // ButtonGroup,
+  // Table,
+  // TableColumn,
   // DatePicker,
   // TimeSelect,
   // TimePicker,
   // Popover,
   // Tooltip,
   // Breadcrumb,
-  // BreadcrumbItem,
-  Form,
-  FormItem,
+  // // BreadcrumbItem,
+  // Form,
+  // FormItem,
   // Tabs,
   // TabPane,
   // Tag,
@@ -75,8 +75,8 @@ import {
   // Loading,
   // MessageBox,
   // Message,
-  Notification
-} from 'element-ui';
+//   Notification
+// } from 'element-ui';
 
 // Vue.use(Pagination);
 // Vue.use(Dialog);
@@ -142,10 +142,14 @@ import {
 // Vue.use(Main);
 // Vue.use(Footer);
 
+import store from "@/vuex/store.js"
+
 Vue.config.productionTip = false
 
 new Vue({
   el: '#app',
+  store,
   router,
+ 
   render : d => d(App)
 })

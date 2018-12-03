@@ -1,13 +1,12 @@
 <template>
     <div class="home-contain">
         <el-container>
-            <el-aside width="auto">
-                 
+            <el-aside width="200px">
                  <div class="log" >
                     兔子商城
                   </div>
                   <el-menu
-                      default-active="2"
+                      default-active="1"
                       class="el-menu-vertical-demo"
                       @open="handleOpen"
                       @close="handleClose"
@@ -15,15 +14,16 @@
                       background-color="#545c64"
                      text-color="#fff"
                      active-text-color="#ffd04b"
+                     :router="true"
                      >
                       <el-submenu index="1">
                         <template slot="title">
                           <i class="el-icon-location"></i>
                           <span>用户管理</span>
                         </template>
-                         <el-menu-item index="2">
+                         <el-menu-item index="user">
                             <i class="el-icon-menu"></i>
-                            <span slot="title">用户列表</span>
+                            <span slot="title" >用户列表</span>
                         </el-menu-item>
                       </el-submenu>
 
@@ -34,7 +34,7 @@
                   <el-button type="warning" icon="el-icon-star-off" circle class="btn" @click="shrink"></el-button>
                   <h1 class="title">后台管理系统</h1>
                   <div class="right">
-                      <span class="user">你好, {{$stort.getters.username}}</span>
+                      <span class="user">你好, {{$store.getters.username}}</span>
                        <el-button type="danger" plain @click="logout">退出</el-button>
                   </div>
               </el-header>
@@ -78,15 +78,7 @@ export default {
       },
       //侧边栏收缩
       shrink(){
-          let log = document.querySelector(".log")
-          this.isCollapse = !this.isCollapse;
-          if(this.isCollapse){
-            log.style.fontSize = "15px";
-            log.style.transition = "2s";
-          }else{
-              log.style.fontSize = "30px";
-          }
-          
+          this.isCollapse = !this.isCollapse;  
       },
     //   退出登录
       logout(){
