@@ -115,14 +115,14 @@
                 <el-tag type="success">{{identityForm.username}}</el-tag>
             </el-form-item>
             <el-form-item label="选择身份">
-                <el-select v-model="rolesId" placeholder="请选择活动区域">
-                    <el-option :label="item.roleName" :value="item.roleName" v-for="(item) in rolesList" :key="item.id"></el-option>
+                <el-select v-model="rolesId" placeholder="请选择活动区域" >
+                    <el-option :label="item.roleName" :value="item.id" v-for="(item) in rolesList" :key="item.id"></el-option>
                 </el-select>
             </el-form-item>
         </el-form>
         <div slot="footer" class="dialog-footer">
             <el-button @click="identityDialogFormVisible = false">取 消</el-button>
-            <el-button type="primary" @click="limitUser('identity')" >确 定</el-button>
+            <el-button type="primary" @click="rolesUser('identity')" >确 定</el-button>
         </div>
         </el-dialog>
     </div>
@@ -305,9 +305,28 @@ export default {
                     this.rolesList = res.data  //获取身份列表
                 }
             })
-        }
+        },
         //选择身份
-
+        rolesUser(formName){
+            this.identityForm.rid = this.rolesId;
+           this.$refs[formName].validate((valid) => {
+               if(valid){
+                    allotRoles(this.identityForm, {id:this.identityForm, rid:this.identityForm}).then(res => {
+                        console.log(res)
+                        if(res.meta.status == 200){
+                            this.identityDialogFormVisible = false
+                            this.$message({ message:"设置身份成功", type:"success" })
+                        }else{
+                            this.$message({ message:res.meta.msg, type:"error" })
+                        }
+                    })
+               }else{
+                   this.$message({message:"分配身份失败", type: "error"})
+               }
+           })
+           
+           
+        }
     }
 }
 </script>
