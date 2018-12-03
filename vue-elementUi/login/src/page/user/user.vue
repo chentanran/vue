@@ -46,8 +46,8 @@
                 label="操作"
                 >
                 <template slot-scope="scope">
-                    <el-button  type="primary" icon="el-icon-edit" circle plain></el-button>
-                    <el-button  type="danger" icon="el-icon-delete" circle plain></el-button>
+                    <el-button  type="primary" icon="el-icon-edit" circle plain @click="editUser(scope)"></el-button>
+                    <el-button  type="danger" icon="el-icon-delete" circle plain @click="deleteUser(scope)"></el-button>
                     <el-button  type="success" icon="el-icon-check" circle plain></el-button>
                     
                 </template>
@@ -59,15 +59,15 @@
                 @size-change="handleSizeChange"
                 @current-change="handleCurrentChange"
                 :current-page="1"
-                :page-sizes="[1, 2, 3, 4]"
-                :page-size="1"
+                :page-sizes="[10, 20, 30, 40]"
+                :page-size="10"
                 layout="total, sizes, prev, pager, next, jumper"
                 :total="total">
             </el-pagination>
         </div>
 
         <!-- Form -->
-
+        <!-- 添加用户 -->
         <el-dialog title="收货地址" :visible.sync="dialogFormVisible">
         <el-form :model="form" :label-width="formLabelWidth" :rules="rules" ref="userform">
             <el-form-item label="用户名:" prop="username">
@@ -89,26 +89,51 @@
         </div>
         </el-dialog>
          
+          <!-- 编辑用户 -->
+        <el-dialog title="收货地址" :visible.sync="editDialogFormVisible">
+        <el-form :model="editForm" :label-width="formLabelWidth" :rules="rules" ref="edituser">
+            <el-form-item label="用户名:" prop="username" >
+            <el-input v-model="editForm.username" autocomplete="off" disabled></el-input>
+            </el-form-item>
+            <el-form-item label="邮箱:" prop="email">
+            <el-input v-model="editForm.email" autocomplete="off" type="email"></el-input>
+            </el-form-item>
+            <el-form-item label="电话:" prop="mobile">
+            <el-input v-model="editForm.mobile" autocomplete="off"></el-input>
+            </el-form-item>
+        </el-form>
+        <div slot="footer" class="dialog-footer">
+            <el-button @click="editDialogFormVisible = false">取 消</el-button>
+            <el-button type="primary" @click="editUserinfo('edituser')" >确 定</el-button>
+        </div>
+        </el-dialog>
     </div>
 </template>
 
 <script>
-import { getUserList, changeStatus, addUser } from "@/app/axios.js"
+import { getUserList, changeStatus, addUser, getUserInfo, editUser, deleteUser} from "@/app/axios.js"
 
 export default {
     data() {
      return {
         userInfo : [],  //列表数据
         query: "", //搜索用户
-        pagesize: 1, //分页数量
+        pagesize: 10, //分页数量
         pagenum: 1, //当前页码
         total: 0, 
         dialogFormVisible: false,  //弹出添加框
-        form: {
+        editDialogFormVisible: false,  //弹出编辑框
+        form: {  //添加表单数据
           username: '',
           password: "",
           email: "",
           mobile: ""
+        },
+        editForm:{   //编辑表单数据
+          username: '',
+          email: "",
+          mobile: "",
+          id: ""
         },
         formLabelWidth: '120px',
         rules: {
@@ -169,9 +194,7 @@ export default {
         },
         //添加用户
         addUser(formName){
-            // console.log(this.$refs)
             this.$refs[formName].validate((valid)=>{
-                
                 if(valid){
                    addUser({username:this.form.username, password:this.form.password, email:this.form.email, mobile:this.form.mobile}).then(res=>{
                        console.log(res)
@@ -187,7 +210,56 @@ export default {
                     this.$message({message:"提交的数据错误", type: "error"})
                 }
             })
+        },
+        // 获取要编辑用户
+        editUser(scope){
+            this.editDialogFormVisible = true
+            getUserInfo(scope.row).then(res=>{
+                if(res.meta.status == 200){
+                    this.editForm.username = res.data.username
+                    this.editForm.email = res.data.email
+                    this.editForm.mobile = res.data.mobile
+                    this.editForm.id = res.data.id
+                }else{
+                    this.$message({message:res.meta.msg, type:"error"})
+                }
+            })
+           
+        },
+        //提交编辑用户
+        editUserinfo(edituser){
+            this.$refs[edituser].validate((valid)=>{
+                if(valid){
+                    editUser(this.editForm).then(res =>{
+                        if(res.meta.status == 200){
+                            this.editDialogFormVisible = false
+                            this.$message({message:"编辑数据成功", type:"success"})
+                            this.initList()
+                        }else{
+                            this.$message({message:"编辑失败", type:"error"})
+                        }
+                       
+                    })
+                }else{
+                    this.$message({message:"编辑失败", type:"error"})
+                    return false
+                }
+            })
+        },
+        //删除用户
+        deleteUser(scope){
+            // console.log(scope)
+            deleteUser(scope.row).then(res => {
+                console.log(res)
+                if(res.meta.status == 200){
+                    this.$message({message:"删除成功", type:"success"})
+                    this.initList()
+                }else{
+                    this.$message({message: "删除失败", type:"error"})
+                }
+            })
         }
+
     }
 }
 </script>

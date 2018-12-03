@@ -24,3 +24,9 @@ export const getUserList = params => { return axios.get("users", params).then(re
 export const changeStatus = params => { return axios.put(`users/${params.uid}/state/${params.type}`).then(res => res.data) }
 //添加用户
 export const addUser = params => { return axios.post("users", params).then(res=>res.data) }
+//根据id获取用户信息
+export const getUserInfo = params => { return axios.get(`users/${params.id}`).then(res => res.data) }
+//编辑用户提交
+export const editUser = params => { return axios.put(`users/${params.id}`,params).then(res => res.data) }
+//删除用户
+export const deleteUser = params => { return axios.delete(`users/${params.id}`).then(res => res.data) }
