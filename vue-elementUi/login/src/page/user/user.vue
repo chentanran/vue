@@ -48,7 +48,7 @@
                 <template slot-scope="scope">
                     <el-button  type="primary" icon="el-icon-edit" circle plain @click="editUser(scope)"></el-button>
                     <el-button  type="danger" icon="el-icon-delete" circle plain @click="deleteUser(scope)"></el-button>
-                    <el-button  type="success" icon="el-icon-check" circle plain></el-button>
+                    <el-button  type="success" icon="el-icon-check" circle plain @click="identity(scope)"></el-button>
                     
                 </template>
             </el-table-column>
@@ -68,50 +68,68 @@
 
         <!-- Form -->
         <!-- 添加用户 -->
-        <el-dialog title="收货地址" :visible.sync="dialogFormVisible">
-        <el-form :model="form" :label-width="formLabelWidth" :rules="rules" ref="userform">
-            <el-form-item label="用户名:" prop="username">
-            <el-input v-model="form.username" autocomplete="off"></el-input>
-            </el-form-item>
-            <el-form-item label="密码:" prop="password">
-            <el-input v-model="form.password" autocomplete="off" type="password"></el-input>
-            </el-form-item>
-            <el-form-item label="邮箱:" prop="email">
-            <el-input v-model="form.email" autocomplete="off" type="email"></el-input>
-            </el-form-item>
-            <el-form-item label="电话:" prop="mobile">
-            <el-input v-model="form.mobile" autocomplete="off"></el-input>
-            </el-form-item>
-        </el-form>
-        <div slot="footer" class="dialog-footer">
-            <el-button @click="dialogFormVisible = false">取 消</el-button>
-            <el-button type="primary" @click="addUser('userform')" >确 定</el-button>
-        </div>
+        <el-dialog title="添加用户" :visible.sync="dialogFormVisible">
+            <el-form :model="form" :label-width="formLabelWidth" :rules="rules" ref="userform">
+                <el-form-item label="用户名:" prop="username">
+                <el-input v-model="form.username" autocomplete="off"></el-input>
+                </el-form-item>
+                <el-form-item label="密码:" prop="password">
+                <el-input v-model="form.password" autocomplete="off" type="password"></el-input>
+                </el-form-item>
+                <el-form-item label="邮箱:" prop="email">
+                <el-input v-model="form.email" autocomplete="off" type="email"></el-input>
+                </el-form-item>
+                <el-form-item label="电话:" prop="mobile">
+                <el-input v-model="form.mobile" autocomplete="off"></el-input>
+                </el-form-item>
+            </el-form>
+            <div slot="footer" class="dialog-footer">
+                <el-button @click="dialogFormVisible = false">取 消</el-button>
+                <el-button type="primary" @click="addUser('userform')" >确 定</el-button>
+            </div>
         </el-dialog>
          
           <!-- 编辑用户 -->
-        <el-dialog title="收货地址" :visible.sync="editDialogFormVisible">
-        <el-form :model="editForm" :label-width="formLabelWidth" :rules="rules" ref="edituser">
+        <el-dialog title="编辑用户" :visible.sync="editDialogFormVisible">
+            <el-form :model="editForm" :label-width="formLabelWidth" :rules="rules" ref="edituser">
+                <el-form-item label="用户名:" prop="username" >
+                <el-input v-model="editForm.username" autocomplete="off" disabled></el-input>
+                </el-form-item>
+                <el-form-item label="邮箱:" prop="email">
+                <el-input v-model="editForm.email" autocomplete="off" type="email"></el-input>
+                </el-form-item>
+                <el-form-item label="电话:" prop="mobile">
+                <el-input v-model="editForm.mobile" autocomplete="off"></el-input>
+                </el-form-item>
+            </el-form>
+            <div slot="footer" class="dialog-footer">
+                <el-button @click="editDialogFormVisible = false">取 消</el-button>
+                <el-button type="primary" @click="editUserinfo('edituser')" >确 定</el-button>
+            </div>
+        </el-dialog>
+
+          <!-- 用户权限 -->
+        <el-dialog title="权限设置" :visible.sync="identityDialogFormVisible">
+        <el-form :model="identityForm" :label-width="formLabelWidth" :rules="rules" ref="identity">
             <el-form-item label="用户名:" prop="username" >
-            <el-input v-model="editForm.username" autocomplete="off" disabled></el-input>
+                <el-tag type="success">{{identityForm.username}}</el-tag>
             </el-form-item>
-            <el-form-item label="邮箱:" prop="email">
-            <el-input v-model="editForm.email" autocomplete="off" type="email"></el-input>
-            </el-form-item>
-            <el-form-item label="电话:" prop="mobile">
-            <el-input v-model="editForm.mobile" autocomplete="off"></el-input>
+            <el-form-item label="选择身份">
+                <el-select v-model="rolesId" placeholder="请选择活动区域">
+                    <el-option :label="item.roleName" :value="item.roleName" v-for="(item) in rolesList" :key="item.id"></el-option>
+                </el-select>
             </el-form-item>
         </el-form>
         <div slot="footer" class="dialog-footer">
-            <el-button @click="editDialogFormVisible = false">取 消</el-button>
-            <el-button type="primary" @click="editUserinfo('edituser')" >确 定</el-button>
+            <el-button @click="identityDialogFormVisible = false">取 消</el-button>
+            <el-button type="primary" @click="limitUser('identity')" >确 定</el-button>
         </div>
         </el-dialog>
     </div>
 </template>
 
 <script>
-import { getUserList, changeStatus, addUser, getUserInfo, editUser, deleteUser} from "@/app/axios.js"
+import { getUserList, changeStatus, addUser, getUserInfo, editUser, deleteUser, rolesUser, allotRoles} from "@/app/axios.js"
 
 export default {
     data() {
@@ -123,6 +141,7 @@ export default {
         total: 0, 
         dialogFormVisible: false,  //弹出添加框
         editDialogFormVisible: false,  //弹出编辑框
+        identityDialogFormVisible: false, //弹出身份选择框
         form: {  //添加表单数据
           username: '',
           password: "",
@@ -135,6 +154,9 @@ export default {
           mobile: "",
           id: ""
         },
+        identityForm:{}, //分配身份,获取用户信息
+        rolesList:[],  //获取身份信息
+        rolesId: "",  //选择
         formLabelWidth: '120px',
         rules: {
          username: [
@@ -156,6 +178,9 @@ export default {
     },
     created(){
         this.initList();
+    },
+    updated() {
+        // console.log(this.rolesId)
     },
     methods:{
         //设置每页显示几条
@@ -248,17 +273,40 @@ export default {
         },
         //删除用户
         deleteUser(scope){
-            // console.log(scope)
-            deleteUser(scope.row).then(res => {
-                console.log(res)
+            this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+                confirmButtonText: '确定',
+                cancelButtonText: '取消',
+                type: 'warning'
+                }).then(() => {
+                     deleteUser(scope.row).then(res => {
+                        // console.log(res)
+                        if(res.meta.status == 200){
+                            this.$message({message:"删除成功", type:"success"})
+                            this.initList()
+                        }else{
+                            this.$message({message: "删除失败", type:"error"})
+                        }
+                    })
+                }).catch(() => {
+                this.$message({
+                    type: 'info',
+                    message: '已取消删除'
+                });          
+            });
+
+           
+        },
+        // 获取身份列表
+        identity(scope){
+            this.identityDialogFormVisible = true
+            this.identityForm = scope.row  //获取用户信息
+            rolesUser().then(res => {
                 if(res.meta.status == 200){
-                    this.$message({message:"删除成功", type:"success"})
-                    this.initList()
-                }else{
-                    this.$message({message: "删除失败", type:"error"})
+                    this.rolesList = res.data  //获取身份列表
                 }
             })
         }
+        //选择身份
 
     }
 }
