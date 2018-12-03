@@ -66,7 +66,7 @@ export default {
         getData(){
             let params = { params : {query:"",pagenum:1,pagesize:1} }
             getUserList(params).then(res => {
-                console.log(res)
+                // console.log(res)
             })
         },
         //

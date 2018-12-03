@@ -11,7 +11,7 @@
             <el-input placeholder="请输入内容"  class="input-with-select" v-model="query" @keyup.native.enter="initList">
                 <el-button slot="append" icon="el-icon-search" @click="initList"></el-button>
             </el-input>
-            <el-button type="success" plain>成功按钮</el-button>
+            <el-button type="success" plain @click="dialogFormVisible = true">添加</el-button>
         </div>
         <!-- 表格 -->
         <el-table
@@ -38,7 +38,7 @@
             </el-table-column>
             <el-table-column label="用户状态">
                 <template slot-scope="scope">
-                    <el-switch v-model="scope.row.mg_state"></el-switch>
+                    <el-switch v-model="scope.row.mg_state" @change="changeStatus(scope)"></el-switch>
                 </template>
             </el-table-column>
             <el-table-column
@@ -65,12 +65,35 @@
                 :total="total">
             </el-pagination>
         </div>
+
+        <!-- Form -->
+
+        <el-dialog title="收货地址" :visible.sync="dialogFormVisible">
+        <el-form :model="form" :label-width="formLabelWidth" :rules="rules" ref="userform">
+            <el-form-item label="用户名:" prop="username">
+            <el-input v-model="form.username" autocomplete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="密码:" prop="password">
+            <el-input v-model="form.password" autocomplete="off" type="password"></el-input>
+            </el-form-item>
+            <el-form-item label="邮箱:" prop="email">
+            <el-input v-model="form.email" autocomplete="off" type="email"></el-input>
+            </el-form-item>
+            <el-form-item label="电话:" prop="mobile">
+            <el-input v-model="form.mobile" autocomplete="off"></el-input>
+            </el-form-item>
+        </el-form>
+        <div slot="footer" class="dialog-footer">
+            <el-button @click="dialogFormVisible = false">取 消</el-button>
+            <el-button type="primary" @click="addUser('userform')" >确 定</el-button>
+        </div>
+        </el-dialog>
          
     </div>
 </template>
 
 <script>
-import { getUserList } from "@/app/axios.js"
+import { getUserList, changeStatus, addUser } from "@/app/axios.js"
 
 export default {
     data() {
@@ -79,30 +102,89 @@ export default {
         query: "", //搜索用户
         pagesize: 1, //分页数量
         pagenum: 1, //当前页码
-        total: "",
+        total: 0, 
+        dialogFormVisible: false,  //弹出添加框
+        form: {
+          username: '',
+          password: "",
+          email: "",
+          mobile: ""
+        },
+        formLabelWidth: '120px',
+        rules: {
+         username: [
+           { required: true, message: '请输入用户名', trigger: 'blur' },
+         ],
+         password: [
+           { required: true, message: '请输入密码', trigger: 'blur' },
+         ],
+         email: [
+           { required: true, message: '请输入邮箱', trigger: 'blur' },
+           { type: 'email', required: true, message: '请输入正确格式', trigger: 'blur' }
+         ],
+         mobile: [
+           { required: true, message: '请输入手机号', trigger: 'blur' },
+         ],
+        }
      }
-
+        
     },
     created(){
         this.initList();
     },
     methods:{
+        //设置每页显示几条
         handleSizeChange(val) {
-            console.log(`每页 ${val} 条`);
+            // console.log(`每页 ${val} 条`);
             this.pagesize = val;
             this.initList()
         },
+        //设置当前第几页
         handleCurrentChange(val) {
-            console.log(`当前页: ${val}`);
+            // console.log(`当前页: ${val}`);
             this.pagenum = val
             this.initList()
         },
+        //获取用户数据
         initList(){
             getUserList({params: {query: this.query, pagenum: this.pagenum, pagesize: this.pagesize}}).then((res)=>{
-                console.log(res)
+                // console.log(res)
                 if(res.meta.status == 200){
                     this.userInfo = res.data.users;
                     this.total = res.data.total
+                }
+            })
+        },
+        //改变用户状态
+        changeStatus(scope){
+            // console.log(scope)
+            changeStatus({uid:scope.row.id,type:scope.row.mg_state}).then(res=>{
+                // console.log(res)
+                if(res.meta.status == 200){
+                    this.$message({message: "改变状态成功", type:"success"})
+                }else{
+                    this.$message({message:res.meta.msg, type:"error"})
+                }
+            })
+        },
+        //添加用户
+        addUser(formName){
+            // console.log(this.$refs)
+            this.$refs[formName].validate((valid)=>{
+                
+                if(valid){
+                   addUser({username:this.form.username, password:this.form.password, email:this.form.email, mobile:this.form.mobile}).then(res=>{
+                       console.log(res)
+                       if(res.meta.status == 201){
+                           this.dialogFormVisible = false
+                           this.$message({message:"添加成功", type:"success"})
+                           this.initList() //从新获取数据
+                       }else{
+                           this.$message({message:res.meta.msg, type:"error"})
+                       }
+                   })
+                }else{
+                    this.$message({message:"提交的数据错误", type: "error"})
                 }
             })
         }
