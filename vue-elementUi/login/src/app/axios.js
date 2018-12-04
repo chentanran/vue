@@ -36,3 +36,5 @@ export const rolesUser = params => { return axios.get("roles").then(res => res.d
 export const allotRoles = params => { return axios.put(`users/${params.id}/role`, {id:params.id, rid:params.rid}).then(res => res.data) }
 //所有权限列表
 export const getRights = params => { return axios.get(`rights/${params.type}`).then(res => res.data) }
+//获取角色列表
+export const getRolesList = params => { return axios.get(`roles`).then(res => res.data) }
