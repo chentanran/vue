@@ -15,6 +15,7 @@
         </div>
         <!-- 表格 -->
         <el-table
+            v-loading="loading"
             :data="userInfo"
             border
             style="width: 100%">
@@ -157,7 +158,8 @@ export default {
         identityForm:{}, //分配身份,获取用户信息
         rolesList:[],  //获取身份信息
         rolesId: "",  //选择
-        formLabelWidth: '120px',
+        formLabelWidth: '120px', //表格的宽度
+        loading: true,  //加载动画
         rules: {
          username: [
            { required: true, message: '请输入用户名', trigger: 'blur' },
@@ -197,11 +199,13 @@ export default {
         },
         //获取用户数据
         initList(){
+            // this.loading = true,  //加载动画
             getUserList({params: {query: this.query, pagenum: this.pagenum, pagesize: this.pagesize}}).then((res)=>{
                 // console.log(res)
                 if(res.meta.status == 200){
                     this.userInfo = res.data.users;
                     this.total = res.data.total
+                    this.loading = false
                 }
             })
         },
@@ -298,16 +302,21 @@ export default {
         },
         // 获取身份列表
         identity(scope){
-            this.identityDialogFormVisible = true
-            this.identityForm = scope.row  //获取用户信息
-            rolesUser().then(res => {
-                if(res.meta.status == 200){
-                    this.rolesList = res.data  //获取身份列表
-                }
-            })
+           
+                this.identityDialogFormVisible = true
+                this.identityForm = scope.row  //获取用户信息
+                rolesUser().then(res => {
+                    if(res.meta.status == 200){
+                        this.rolesList = res.data  //获取身份列表
+                    }
+                })
         },
         //选择身份
         rolesUser(formName){
+             if(!this.rolesId){
+                this.$message({ message:"获取信息失败", type:"error" })
+                return;
+            }
             this.identityForm.rid = this.rolesId;
            this.$refs[formName].validate((valid) => {
                if(valid){
@@ -324,8 +333,6 @@ export default {
                    this.$message({message:"分配身份失败", type: "error"})
                }
            })
-           
-           
         }
     }
 }
