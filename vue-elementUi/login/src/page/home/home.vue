@@ -6,6 +6,7 @@
                     兔子商城
                   </div>
                   <el-menu
+                      :unique-opened="true"
                       default-active="1"
                       class="el-menu-vertical-demo"
                       @open="handleOpen"
@@ -16,17 +17,30 @@
                      active-text-color="#ffd04b"
                      :router="true"
                      >
-                      <el-submenu index="1">
+                      <el-submenu index="1" >
                         <template slot="title">
                           <i class="el-icon-location"></i>
                           <span>用户管理</span>
                         </template>
-                         <el-menu-item index="user">
+                         <el-menu-item index="user" class="home-item">
                             <i class="el-icon-menu"></i>
                             <span slot="title" >用户列表</span>
                         </el-menu-item>
                       </el-submenu>
-
+                      <el-submenu index="2">
+                        <template slot="title">
+                          <i class="el-icon-location"></i>
+                          <span>权限管理</span>
+                        </template>
+                         <el-menu-item index="rights" class="home-item">
+                            <i class="el-icon-menu"></i>
+                            <span slot="title" >权限列表</span>
+                        </el-menu-item>
+                        <el-menu-item index="roles" class="home-item">
+                            <i class="el-icon-menu"></i>
+                            <span slot="title" >角色列表</span>
+                        </el-menu-item>
+                      </el-submenu>
                     </el-menu>
             </el-aside>
             <el-container>
@@ -93,6 +107,7 @@ export default {
 <style lang="less">
     .home-contain{
         height: 100%;
+        
         .el-container{
             // display: flex;
             height: 800px;
@@ -106,16 +121,21 @@ export default {
           background-color: #D3DCE6;
           color: #333;
           text-align: center;
+
             .log{
                 height: 60px;
                 line-height: 60px;
                 color: orange;
                 font-size: 30px;
             }
+           
         }
         .el-main {
           background-color: #E9EEF3;
           color: #333;
+        }
+        .home-item{
+            margin-left: 10px;
         }
         .el-header{
             line-height: 60px;
