@@ -13,33 +13,18 @@
             :data="rolesInfo"
             border
             style="width: 100%">
-            <el-table-column type="expand">
-            <template slot-scope="props">
-                <el-form label-position="left" inline class="demo-table-expand">
-                    <span>你好啊</span>
-                <!-- <el-form-item label="商品名称">
-                    <span>{{ props.row.name }}</span>
-                </el-form-item>
-                <el-form-item label="所属店铺">
-                    <span>{{ props.row.shop }}</span>
-                </el-form-item>
-                <el-form-item label="商品 ID">
-                    <span>{{ props.row.id }}</span>
-                </el-form-item>
-                <el-form-item label="店铺 ID">
-                    <span>{{ props.row.shopId }}</span>
-                </el-form-item>
-                <el-form-item label="商品分类">
-                    <span>{{ props.row.category }}</span>
-                </el-form-item>
-                <el-form-item label="店铺地址">
-                    <span>{{ props.row.address }}</span>
-                </el-form-item>
-                <el-form-item label="商品描述">
-                    <span>{{ props.row.desc }}</span>
-                </el-form-item> -->
-                </el-form>
-            </template>
+            <el-table-column type="expand" >
+                <template slot-scope="scope" >
+                   <el-row v-for="first in scope.row.children" :key="first.id">
+                        <el-col :span="4" class="first"><el-tag  closable>{{first.authName}}</el-tag> <span class="el-icon-arrow-right"></span>  </el-col>
+                        <el-col :span="20">
+                            <el-row v-for="second in first.children" :key="second.id" class="second">
+                                <el-col :span="4"><el-tag type="success"  closable>{{second.authName}}</el-tag> <span class="el-icon-arrow-right"></span></el-col>
+                                <el-col :span="20" ><el-tag type="warning"  closable v-for="third in second.children" :key="third.id">{{third.authName}}</el-tag></el-col>
+                            </el-row>
+                        </el-col>
+                    </el-row>
+                </template>
             </el-table-column>
             <el-table-column
             label="角色名称"
@@ -72,16 +57,20 @@ export default {
     },
     created(){
         this.getrolesInfo()
+
     },
     methods:{
         //获取用户列表数据
         getrolesInfo(){
             getRolesList().then(res=>{
-                // console.log(res)
                 if(res.meta.status == 200){
                     this.rolesInfo = res.data
+                    console.log( this.rolesInfo)
                 }
             })
+        },
+        getall(scope){
+            console.log(scope)
         }
     }
 }
@@ -97,6 +86,12 @@ export default {
         }
         .roles-btn{
             margin: 5px 0;
+        }
+        .first .el-tag{
+            margin: 5px, 0;
+        }
+        .second span{
+            margin: 2px 1px;
         }
     }
 </style>
