@@ -76,14 +76,7 @@ export default {
         
     },
     methods:{
-        //获取数据
-        // getData(){
-        //     let params = { params : {query:"",pagenum:1,pagesize:1} }
-        //     getUserList(params).then(res => {
-        //         // console.log(res)
-        //     })
-        // },
-        //
+        
         handleOpen(key, keyPath) {
             console.log(key, keyPath);
         },

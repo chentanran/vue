@@ -26,7 +26,7 @@ let router = new Router({
 
 //全局路由守卫
 router.beforeEach((to,from, next) => {
-  let token = localStorage.getItem("token")
+  let token = sessionStorage.getItem("token")
   if(token){
     next()
   }else{

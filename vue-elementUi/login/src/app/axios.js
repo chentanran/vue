@@ -6,7 +6,7 @@ axios.defaults.baseURL = baseURL
 // 添加请求拦截器
 axios.interceptors.request.use(function (config) {
     // 在发送请求之前做些什么
-      let token = localStorage.getItem("token");
+      let token = sessionStorage.getItem("token");
       if(token){
           config.headers["Authorization"] = token
           }
@@ -38,3 +38,9 @@ export const allotRoles = params => { return axios.put(`users/${params.id}/role`
 export const getRights = params => { return axios.get(`rights/${params.type}`).then(res => res.data) }
 //获取角色列表
 export const getRolesList = params => { return axios.get(`roles`).then(res => res.data) }
+//删除角色指定权限
+export const deleteRoles = params => { return axios.delete(`roles/${params.roleId}/rights/${params.rightId}`).then(res => res.data) }
+//角色授权
+export const authUser = (roleId,rids) => { return axios.post(`roles/${roleId}/rights`,rids).then(res => res.data) }
+//左侧菜单权限
+export const getMenus = () => { return axios.get(`menus`).then(res => res.data) }

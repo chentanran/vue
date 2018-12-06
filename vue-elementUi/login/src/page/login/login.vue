@@ -40,7 +40,7 @@ import  { checkUser } from "@/app/axios.js"
                       checkUser(this.form).then(res=>{
                           if(res.meta.status == 200){
                               this.$message({message:'登录成功',type : "success"});
-                              localStorage.setItem("token", res.data.token)
+                              sessionStorage.setItem("token", res.data.token)
                             //   localStorage.setItem("username", res.data.username)
                             // console.log(this)
                               this.$store.commit("setUsername",res.data.username)  

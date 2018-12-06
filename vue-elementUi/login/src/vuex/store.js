@@ -10,7 +10,7 @@ var store = new Vuex.Store({
     mutations:{
         setUsername(state, user){
             state.username = user
-            localStorage.setItem("username", user)
+            sessionStorage.setItem("username", user)
         }
     },
     actions:{
@@ -18,7 +18,7 @@ var store = new Vuex.Store({
     },
     getters:{
         username(state){
-            return  localStorage.getItem("username")
+            return  sessionStorage.getItem("username")
           
         }
     }
