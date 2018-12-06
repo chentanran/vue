@@ -17,17 +17,17 @@
                      active-text-color="#ffd04b"
                      :router="true"
                      >
-                      <el-submenu index="1" >
-                        <template slot="title">
+                      <el-submenu :index="String(first.order)" v-for="first in menusList" :key="first.id">
+                        <template slot="title" >
                           <i class="el-icon-location"></i>
-                          <span>用户管理</span>
+                          <span>{{first.authName}}</span>
                         </template>
-                         <el-menu-item index="user" class="home-item">
+                         <el-menu-item :index="second.path" class="home-item" v-for="second in first.children" :key="second.id">
                             <i class="el-icon-menu"></i>
-                            <span slot="title" >用户列表</span>
+                            <span slot="title" >{{second.authName}}</span>
                         </el-menu-item>
                       </el-submenu>
-                      <el-submenu index="2">
+                      <!-- <el-submenu index="2">
                         <template slot="title">
                           <i class="el-icon-location"></i>
                           <span>权限管理</span>
@@ -40,7 +40,7 @@
                             <i class="el-icon-menu"></i>
                             <span slot="title" >角色列表</span>
                         </el-menu-item>
-                      </el-submenu>
+                      </el-submenu> -->
                     </el-menu>
             </el-aside>
             <el-container>
@@ -61,22 +61,36 @@
 </template>
 
 <script>
-import { getUserList } from "@/app/axios.js"
+import { getUserList, getMenus } from "@/app/axios.js"
 
 export default {
     data(){
         return {
-            isCollapse: false
+            isCollapse: false,
+            menusList: []
         }
     },
+    created(){
+        this.getMenusList()
+    },
     mounted(){
-        // this.getData()
+       
     },
     updated() {
         
     },
     methods:{
-        
+        //获取菜单列表
+        getMenusList(){
+            getMenus().then(res =>{
+                console.log(res)
+                if(res.meta.status == 200){
+                    this.menusList = res.data
+                    console.log(this.menusList)
+                }
+            })
+        },
+        //
         handleOpen(key, keyPath) {
             console.log(key, keyPath);
         },
