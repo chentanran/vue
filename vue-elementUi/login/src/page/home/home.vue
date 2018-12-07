@@ -83,10 +83,10 @@ export default {
         //获取菜单列表
         getMenusList(){
             getMenus().then(res =>{
-                console.log(res)
+                // console.log(res)
                 if(res.meta.status == 200){
                     this.menusList = res.data
-                    console.log(this.menusList)
+                    // console.log(this.menusList)
                 }
             })
         },
@@ -103,7 +103,7 @@ export default {
       },
     //   退出登录
       logout(){
-          localStorage.removeItem("token");
+          sessionStorage.removeItem("token");
           this.$message({message: '退出成功',type: 'success',center:true})
           this.$router.push("/login")
       }

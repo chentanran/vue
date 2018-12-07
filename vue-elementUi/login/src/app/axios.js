@@ -44,3 +44,5 @@ export const deleteRoles = params => { return axios.delete(`roles/${params.roleI
 export const authUser = (roleId,rids) => { return axios.post(`roles/${roleId}/rights`,rids).then(res => res.data) }
 //左侧菜单权限
 export const getMenus = () => { return axios.get(`menus`).then(res => res.data) }
+//商品数据列表
+export const getGoodsList = (params) => { return axios.get(`categories`, {params:params}).then(res => res.data) }
