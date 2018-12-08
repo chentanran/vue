@@ -46,3 +46,5 @@ export const authUser = (roleId,rids) => { return axios.post(`roles/${roleId}/ri
 export const getMenus = () => { return axios.get(`menus`).then(res => res.data) }
 //商品数据列表
 export const getGoodsList = (params) => { return axios.get(`categories`, {params:params}).then(res => res.data) }
+//添加分类
+export const addCategories = params => { return axios.post(`categories`, params).then(res => res.data) }
