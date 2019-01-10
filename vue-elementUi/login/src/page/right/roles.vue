@@ -101,7 +101,7 @@ export default {
             getRolesList().then(res=>{
                 if(res.meta.status == 200){
                     this.rolesInfo = res.data
-                    // console.log( this.rolesInfo)
+                    console.log( this.rolesInfo)
                 }
             })
         },
@@ -125,10 +125,12 @@ export default {
             getRights({type:"tree"}).then(res => {
                 if(res.meta.status == 200){
                     this.rightTree = res.data
+                    // console.log(res.data)
                 }else{
                     this.$message({message:"获取数据失败", type:"error"})
                 }
             })
+            console.log(row)
             //循环遍历,得到权限对应的id值
             this.selectId.length = 0
             row.children.forEach(first => {
@@ -146,10 +148,11 @@ export default {
         getCheckedKeys() {
             // console.log(this.row.id)
            let rids = this.$refs.tree.getCheckedKeys().join(",");
+        //    console.log(rids)
            authUser(this.row.id, {rids : rids}).then(res => {
-            //    console.log(authId)
+            //    console.log({rids : rids})
                 if(res.meta.status == 200){
-                    // console.log(res)
+                    console.log(res)
                     this.$message({message:"更改成功", type:"success"})
                 }
                this.getrolesInfo()

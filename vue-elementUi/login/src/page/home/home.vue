@@ -86,7 +86,7 @@ export default {
                 // console.log(res)
                 if(res.meta.status == 200){
                     this.menusList = res.data
-                    // console.log(this.menusList)
+                    console.log(this.menusList)
                 }
             })
         },
