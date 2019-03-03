@@ -1,6 +1,6 @@
 <template>
     <base-add-view size="small" title="这是一个标题">
-            <div slot="sl">你好 {{app.userInfo}} {{app.page}}</div>
+        <div slot="sl">你好 {{app.userInfo}} {{app.page}}</div>
     </base-add-view>
     
     <!-- <i-button disabled></i-button> -->

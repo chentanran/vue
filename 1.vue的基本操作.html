@@ -3,22 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
     <title>Document</title>
     <script src="vue.js"></script>
-</head>
+</head> 
 <body>
     <div id="div">
-        <p>{{ msg }}</p>
+        <!-- <p>{{ msg }}</p>
         <div>{{ data }}</div>
+        <div v-pre>{{ data }}</div>
+        <div>
+            <a href="http://baidu.com" @click="handle('dakai',$event)">pppp</a>
+        </div> -->
+
+        <!-- <input type="checkbox" 
+            v-model="toggle"
+            :true-value="value1"
+            :false-value="value2">
+        <label for="">复选框</label>
+        <p>{{ toggle }}</p>
+        <p>{{ value1 }}</p>
+        <p>{{ value2 }}</p>
+
+        <input type="text" v-model.trim="message">
+        {{ message }} -->
+
+        <div id="div1" v-if="show">娃哈哈</div>
+        <button @click="wahha">111</button>
     </div>
 
     <script>
         var vm = new Vue({
             el: "#div",
             data: {
-                msg: "第一个vue文件",
-                data: "第二个vue文件"
+                show: false,
+            },
+            methods: {
+                wahha() {
+                    this.show = true;
+                    this.$nextTick(() => {
+                        let div = document.querySelector("#div1").innerText;
+                        console.log(div);
+                    }) 
+                   
+                }
             }
         })
     </script>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <div id="app">
+      <v-table :columns="columns" :data="data"></v-table>
+    </div>
+
+    <script src="../vue.js"></script>
+    <script src="./table.js"></script>
+    <script>
+      var vue = new Vue({
+        el: '#app',
+        data() {
+          return {
+            // 表头列
+            columns: [
+              {
+                title: '姓名',
+                key: 'name'
+              },
+              {
+                title: '年龄',
+                key: 'age',
+                sortable: true
+              },
+              {
+                title: '性别',
+                key: 'gender'
+              },
+              {
+                title: '地址',
+                key: 'address',
+                sortable: true
+              }
+            ],
+            // 表体数据
+            data: [
+              {
+                name: '小王',
+                age: '18',
+                gender: '男',
+                address: '武汉'
+              },
+              {
+                name: '小李',
+                age: '28',
+                gender: '女',
+                address: '黄石'
+              },
+              {
+                name: '小张',
+                age: '30',
+                gender: '男',
+                address: '北京'
+              },
+            ]
+
+          }
+        },
+      })
+    </script>
+</body>
+</html>

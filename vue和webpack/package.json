@@ -32,7 +32,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --hot --contentBase src --open"
+    "dev": "webpack-dev-server --hot --contentBase src --open",
+    "build": "webpack --progress --hide-modules"
   },
   "repository": {
     "type": "git",

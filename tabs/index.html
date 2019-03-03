@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  
+</head>
+<body>
+  
+  <div id="app">
+    <tabs v-model="activeKey">
+      <pane name="1" label="小红">
+        小红真好看
+      </pane>
+      <pane name="2" label="小黄">
+        小黄真黄
+      </pane>
+      <pane name="3" label="小绿">
+        小绿真香
+      </pane>
+    </tabs>
+  </div>
+  <script src="../vue.js"></script>
+  <script src="pane.js"></script>
+  <script src="tabs.js"></script>
+  <script>
+    var vue = new Vue({
+      el: '#app',
+      data: {
+        activeKey: '1'
+      }
+    })  
+  </script>
+</body>
+</html>
